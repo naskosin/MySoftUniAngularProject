@@ -1,0 +1,43 @@
+
+<header class="header">
+    <h1>The biggest catches</h1>
+   <nav> 
+    <ul *ngIf="isLogged"><li><a routerLink="/register">Register</a>
+</li>
+<li>
+    <a routerLink="/login">Login</a>
+    
+</li>
+<li>
+    <a routerLink="/gallery">Gallery</a>
+    
+</li>
+<li>
+    <a routerLink="/createCatch">Create catch</a>
+    
+</li>
+<li>
+    <a href="">Top 10</a> </li>
+    
+<li>
+    <a (click)="onClickHandler()">My catches</a>
+   
+</li></ul></nav>
+<nav> 
+    <ul *ngIf="!isLogged">
+<li>
+    <a routerLink="/gallery">Gallery</a>
+    
+</li>
+<li>
+    <a routerLink="/createCatch">Create catch</a>
+    
+</li>
+<li>
+    <a href="">Top 10</a> </li>
+    
+<li>
+    <a (click)="onClickHandler()">My catches</a>
+   
+</li></ul></nav>
+</header>

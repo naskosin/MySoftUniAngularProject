@@ -1,0 +1,5 @@
+@import url(header.css);
+@import url(footer.css);
+html{
+    background-image: url("./images/mine.jpg");
+}

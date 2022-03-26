@@ -1,0 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&family=Playball&display=swap');
+
+
+h1, h2, h3, h4{
+    font-family: Playball, serif;
+}
+html{
+    background-image: url("./images/mine.jpg");
+}
+
+section{
+    width: 100%;
+}
+.main{
+   margin: 40px 0;
+    display: inline-block;
+    background-color: white;
+    border-radius: 50px;
+}

@@ -1,0 +1,41 @@
+footer{
+    width: 100%;
+  text-align: justify;
+  justify-content: space-between;
+    background-color: lightskyblue;
+      display: grid;
+      
+     
+   grid-template-columns: 1fr 1fr 1fr;
+   background-color: lightskyblue;
+   margin-bottom: 0;
+   border-top: solid 3px lightyellow;
+   color:white;
+  
+  
+  }
+  
+  footer img{
+      float: left;
+      height:60px;
+      width:100px
+  }
+  footer ul{
+    margin-left: 250px;
+    padding: 10px;
+   
+  }
+  footer li{
+    padding: 2px;
+  }
+  .description p{
+    padding-top: 10px;
+    padding-left:10px;
+    vertical-align:bottom;
+    text-indent: 10px;
+    margin-left: 10px;
+  
+  }
+  .description img{
+    margin-right: 10px
+  }

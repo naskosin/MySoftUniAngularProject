@@ -1,0 +1,24 @@
+<section class="logincontainer">
+
+    <div class="container">
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Tarpon_Jump.jpg" alt="image"/>
+
+        <form  method="POST" class="containertext" [formGroup]="loginFormGroup" (ngSubmit)="loginHandler()">
+            <h2>Login</h2>
+            <p>Welcome, see the new masterpieces!</p>
+
+            <label for="uses">Uses:</label>
+            <input type="text" formControlName="email" id="uses" placeholder="ivan_00" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="*****" name="password">
+
+            <button class="login-btn">Login</button>
+            <div class="card-no-account">
+                <p>Don't have an account? <a href="/register">Sign up</a>.</p>
+            </div>
+
+        </form>
+    </div>
+</section>
