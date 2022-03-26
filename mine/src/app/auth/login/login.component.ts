@@ -17,7 +17,7 @@ export interface CreateDto {
 export class LoginComponent implements OnInit {
 
 loginFormGroup: FormGroup = this.formBuilder.group({
-  'email': new FormControl('', [Validators.required, Validators.email]),
+  'email': new FormControl(null, [Validators.required, Validators.email]),
   'password': new FormControl('', [Validators.required, Validators.minLength(6)])
 })
   constructor(private authservice: AuthService, private userService: UserServiceService, private formBuilder: FormBuilder) { 

@@ -12,8 +12,8 @@
             <input type="text" formControlName="email" id="uses" placeholder="ivan_00" name="email">
 
             <ng-container *ngIf = "loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
-                <p  class="errors">Email is required!</p>
-
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['required']" class="errors">Email is required!</p>
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['email']" class="errors">Email is invalid!</p>
             </ng-container>
 
             

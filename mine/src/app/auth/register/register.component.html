@@ -3,22 +3,39 @@
         
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Tarpon_Jump.jpg" alt="image"/>
 
-        <form action="#" method="POST" class="containertext">
+        <form (ngSubmit)="handleRegister()" class="containertext" [formGroup]="registerFormGroup">
             <h2>Register</h2>
             <p>Register to get ideas and view the latest masterpieces.</p>
 
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="ivan_00" name="username"/>
+            <label for="email">Username:</label>
+            <input type="text" formControlName= "email" id="username" placeholder="ivan_00" name="email"/>
+            <ng-container *ngIf = "registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
+                <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" class="errors">Email is required!</p>
+                <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" class="errors">Email is invalid!</p>
+            </ng-container>
+
+
+
+
+
+<div class="passwords" formGroupName="passwords">
 
             <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="*****" name="password"/>
+            <input type="password" formControlName="password" id="password" placeholder="*****" name="password"/>
+            <ng-container *ngIf="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid">
+                <p *ngIf="passwordsGroup.controls['password'].errors?.['required']" class="errors">Password is required!</p>
+                <p *ngIf="passwordsGroup.controls['password'].errors?.['minlength']" class="errors">Password is invalid!</p>
+            </ng-container>
 
             <label for="re-password">Repeat password:</label>
-            <input type="password" id="re-password" placeholder="*****" name="rePassword"/>
-
-           
-
-            <button  class="registerbtn">Register</button>
+            <input formControlName= "rePassword" type="password" id="re-password" placeholder="*****" name="rePassword"/>
+            <ng-container *ngIf="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid">
+                <p class="errors">Passwords does not matched!</p>
+               
+            </ng-container>
+        
+        </div>
+            <button [disabled]="this.registerFormGroup.invalid" class="registerbtn">Register</button>
             <div  class="cardnoaccount">
                 <p>Already have an account?<a href="/login"></a> Sign in</p>
             </div>

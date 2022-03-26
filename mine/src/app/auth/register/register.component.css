@@ -61,6 +61,7 @@
         }
         
         .containertext>input,
+        .passwords>input,
         .containertext>button {
             width: 100%;
             border: none;

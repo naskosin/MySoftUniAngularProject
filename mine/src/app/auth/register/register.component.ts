@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { UserServiceService } from 'src/app/core/user-service.service';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { passwordMatch } from '../utils';
 
 export interface CreateDto {
   username: string, email: string, password: string
@@ -12,13 +13,29 @@ export interface CreateDto {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit, AfterViewInit {
-  
 
-  constructor(private userService: UserServiceService) { }
+
+
+  passwordControl = new FormControl('', [Validators.required, Validators.minLength(6)])
+
+  get passwordsGroup() : FormGroup{
+    return this.registerFormGroup.controls['passwords'] as FormGroup;
+  }
+  registerFormGroup: FormGroup = this.formBuilder.group({
+    'email': new FormControl('', [Validators.required, Validators.email]),
+    'passwords': new FormGroup({
+    'password': this.passwordControl,
+    'rePassword': new FormControl(null, [passwordMatch(this.passwordControl)])
+  })
+  })
+
+  constructor(private userService: UserServiceService, private formBuilder: FormBuilder) { }
   ngAfterViewInit(): void {
     
   }
-  @ViewChild('myRegister') myRegister!: NgForm;
+  handleRegister(): void{
+    return
+  }
 
   ngOnInit(): void {
     
