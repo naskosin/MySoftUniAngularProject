@@ -1,7 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserServiceService } from 'src/app/core/user-service.service';
+import { UserService } from 'src/app/core/user.service';
 
 export interface CreateDto {
   username: string, email: string, password: string
@@ -20,7 +20,7 @@ loginFormGroup: FormGroup = this.formBuilder.group({
   'email': new FormControl(null, [Validators.required, Validators.email]),
   'password': new FormControl('', [Validators.required, Validators.minLength(6)])
 })
-  constructor(private authservice: AuthService, private userService: UserServiceService, private formBuilder: FormBuilder) { 
+  constructor(private authservice: AuthService, private userService: UserService, private formBuilder: FormBuilder) { 
 
   }
   ngOnInit(): void {

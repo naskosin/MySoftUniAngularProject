@@ -76,7 +76,7 @@
             font-family: 'Barlow', sans-serif;
             font-weight: 700;
         }
-        
+        .passwords>input,
         .containertext>input {
             border: 2px solid lightskyblue;;
             margin: 3px 0 7px;

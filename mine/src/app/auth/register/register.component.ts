@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { UserServiceService } from 'src/app/core/user-service.service';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/core/user.service';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { passwordMatch } from '../utils';
 
-export interface CreateDto {
-  username: string, email: string, password: string
+export interface CreateDto {username: string,
+  email: string, password: string
 }
 
 @Component({
@@ -12,7 +12,7 @@ export interface CreateDto {
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit, AfterViewInit {
+export class RegisterComponent implements OnInit{
 
 
 
@@ -29,12 +29,18 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   })
   })
 
-  constructor(private userService: UserServiceService, private formBuilder: FormBuilder) { }
-  ngAfterViewInit(): void {
-    
-  }
+  constructor(private userService: UserService, private formBuilder: FormBuilder) { }
+  
   handleRegister(): void{
-    return
+    const {email, passwords} = this.registerFormGroup.value;
+    console.log(this.registerFormGroup.value);
+
+    const body: CreateDto={
+      username: "Hans",
+      email: email,
+      password: passwords.password
+    };
+    this.userService.register(body).subscribe((data)=>console.log(data))
   }
 
   ngOnInit(): void {
