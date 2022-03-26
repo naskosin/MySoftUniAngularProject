@@ -11,12 +11,24 @@
             <label for="uses">Uses:</label>
             <input type="text" formControlName="email" id="uses" placeholder="ivan_00" name="email">
 
+            <ng-container *ngIf = "loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
+                <p  class="errors">Email is required!</p>
+
+            </ng-container>
+
+            
             <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="*****" name="password">
+            <input type="password"  formControlName="password"  id="password" placeholder="*****" name="password">
+
+            <ng-container *ngIf = "loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid">
+                <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" class="errors">Password is required!</p>
+                <p *ngIf="loginFormGroup.controls['password'].errors?.['minlength']" class="errors">Password is invalid!</p>
+            </ng-container>
+
 
             <button class="login-btn">Login</button>
             <div class="card-no-account">
-                <p>Don't have an account? <a href="/register">Sign up</a>.</p>
+                <p>Don't have an account? <a routerLink="/register">Sign up</a>.</p>
             </div>
 
         </form>
