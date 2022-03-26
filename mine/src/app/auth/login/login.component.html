@@ -6,7 +6,7 @@
 
         <form  method="POST" class="containertext" [formGroup]="loginFormGroup" (ngSubmit)="loginHandler()">
             <h2>Login</h2>
-            <p>Welcome, see the new masterpieces!</p>
+            <p>The biggest catches!</p>
 
             <label for="uses">Uses:</label>
             <input type="text" formControlName="email" id="uses" placeholder="ivan_00" name="email">
@@ -26,7 +26,7 @@
             </ng-container>
 
 
-            <button class="login-btn">Login</button>
+            <button class="login-btn" [disabled] = "this.loginFormGroup.invalid">Login</button>
             <div class="card-no-account">
                 <p>Don't have an account? <a routerLink="/register">Sign up</a>.</p>
             </div>

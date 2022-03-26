@@ -5,6 +5,7 @@ import {GalleryItemComponent} from '../gallery-item/gallery-item.component'
 import { ActivatedRoute } from '@angular/router';
 import { AuthModule } from 'src/app/auth/auth.module';
 import { AuthService } from 'src/app/auth/auth.service';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-gallery',
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class GalleryComponent implements OnInit {
 fishes!: IFish[]
-  constructor(private galleryService: GalleryService) { }
+  constructor(private galleryService: GalleryService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.galleryService.getAllCatches$().subscribe(
@@ -21,7 +22,8 @@ fishes!: IFish[]
         this.fishes = Object.values(data).sort((a, b)=>{
           return b.weight-a.weight
         });
-        console.log(data)
+        console.log(data);
+        console.log(this.userService.currentUser)
       }
     )
   }

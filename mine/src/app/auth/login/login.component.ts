@@ -36,6 +36,13 @@ loginFormGroup: FormGroup = this.formBuilder.group({
   //  })
   //}
   loginHandler():void{
-console.log(this.loginFormGroup.value)
+console.log(this.loginFormGroup.value);
+const {email, password} = this.loginFormGroup.value;
+const body ={
+  email: email,
+  password: password
+};
+this.userService.login(body).subscribe(data=>{this});
+console.log(this.userService.currentUser)
   }
 }

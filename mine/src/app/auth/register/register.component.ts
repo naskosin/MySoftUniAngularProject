@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/core/user.service';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { passwordMatch } from '../utils';
+import { Router } from '@angular/router';
 
 export interface CreateDto {username: string,
   email: string, password: string
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit{
   })
   })
 
-  constructor(private userService: UserService, private formBuilder: FormBuilder) { }
+  constructor(private userService: UserService, private formBuilder: FormBuilder, private router: Router) { }
   
   handleRegister(): void{
     const {email, passwords} = this.registerFormGroup.value;
@@ -41,6 +42,7 @@ export class RegisterComponent implements OnInit{
       password: passwords.password
     };
     this.userService.register(body).subscribe((data)=>console.log(data))
+    this.router.navigate(['/gallery'])
   }
 
   ngOnInit(): void {

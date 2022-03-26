@@ -42,7 +42,7 @@ body{
 .containertext {
     padding: 10px;
         text-align: center;
-        width: 60%
+        width: 70%
 }
 
 .containertext>h2 {
@@ -60,7 +60,7 @@ body{
 
 .containertext>input,
 .containertext>button {
-    width: 100%;
+    width: 80%;
     border: none;
     padding: 12px;
     border-radius: 3px;
@@ -75,27 +75,29 @@ label {
 }
 
 .containertext>input {
+    text-align: center;
     border: 2px solid lightskyblue;
-    margin: 3px 0 7px;
+    margin: 3px auto 7px auto;
     font-size: 0.8rem;
     color: #656880;
 }
 
 .containertext>.register-btn,
 .containertext>.login-btn {
-    background-image: linear-gradient(to right, #19BEC2, #8C1415);
+    text-align: center;
+    background-color:  #19BEC2 ;
     display: block;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 1.6em;
+    margin: 1.6em auto 0 auto ;
     box-shadow: 0 5px 15px #89caff94;
     transition: box-shadow .3s ease-in-out;
 }
 
 .register-btn:hover,
 .login-btn:hover {
-    background-image: linear-gradient(to right, #2dd2d4, #8C1415);
+    background-image: linear-gradient(#2dd2d4);
     box-shadow: none;
 }
 
