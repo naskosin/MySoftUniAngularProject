@@ -26,7 +26,7 @@ logOut(): void{
 }
 
 login(userData: {email: string, password: string}): Observable<IUser>{
-  return this.http.post<IUser>('http://localhost:3030/users/login', userData).pipe(tap(user=>this.currentUser=user))
+  return this.http.post<IUser>('https://server2nasko.herokuapp.com/users/login', userData).pipe(tap(user=>this.currentUser=user))
 }
   register( userData: { username: string, email: string, password: string}): Observable<IUser>{
     return this.http.post<IUser>('http://localhost:3030/users/register', userData)

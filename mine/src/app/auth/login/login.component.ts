@@ -40,7 +40,7 @@ const body ={
 };
 this.userService.login(body).subscribe({
   next: (data)=>{
-this.userService.currentUser=data,
+
 this.router.navigate(['/gallery'])
 
   },
