@@ -2,6 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/user.service';
+import { Router } from '@angular/router';
 
 export interface CreateDto {
   username: string, email: string, password: string
@@ -16,33 +17,35 @@ export interface CreateDto {
 
 export class LoginComponent implements OnInit {
 
+errorMessage!: string;
+
 loginFormGroup: FormGroup = this.formBuilder.group({
   'email': new FormControl(null, [Validators.required, Validators.email]),
   'password': new FormControl('', [Validators.required, Validators.minLength(6)])
 })
-  constructor(private authservice: AuthService, private userService: UserService, private formBuilder: FormBuilder) { 
+ 
+  constructor(private authservice: AuthService, private userService: UserService, private formBuilder: FormBuilder, private router: Router) { 
 
   }
   ngOnInit(): void {
    
   }
  
-  //ngOnInit(): void {
-  //  this.email = "peter@abv.bg";
-  //  this.password = "123456";
-  //  
-  //  this.authservice.login(this.email, this.password).subscribe(data=>{
-  //    console.log(data)
-  //  })
-  //}
-  loginHandler():void{
-console.log(this.loginFormGroup.value);
+loginHandler():void{
+ this.errorMessage = '';
 const {email, password} = this.loginFormGroup.value;
 const body ={
   email: email,
   password: password
 };
-this.userService.login(body).subscribe(data=>{this});
-console.log(this.userService.currentUser)
-  }
+this.userService.login(body).subscribe({
+  next: (data)=>{
+this.userService.currentUser=data,
+this.router.navigate(['/gallery'])
+
+  },
+ error: (err)=>{this.errorMessage = err.error.message}}
+ 
+);
+}
 }

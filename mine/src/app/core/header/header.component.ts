@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { IUser } from '../interfaces';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
  get isLogged(): boolean{
     return this.userService.isLogged;
   }
-  get currentUser(){
+  get currentUser(): IUser{
     return this.userService.currentUser
   }
 }

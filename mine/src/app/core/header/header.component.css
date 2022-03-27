@@ -11,7 +11,7 @@
     background-color:lightskyblue;
     height: 150px;
 }
-.header a{
+.header a, p{
     color: black;
     letter-spacing: 1px;
     padding: 3px;
@@ -37,7 +37,7 @@
 }
 .header nav{
     display: inline-block;
-    margin: 100px 0px 0px 200px ;
+    margin: 100px 0px 0px 100px ;
     text-align: right;
 }
 main{
