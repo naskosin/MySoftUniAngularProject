@@ -27,6 +27,20 @@ createCatch(userData: {species: string, img: string, _id:string, weight: number}
   return this.http.post<IFish>('http://localhost:3030/data/fishes', userData, options)
 }
 
+//export const createCatches(async (petData, token))  => {
+  //let response = await fetch(`${baseUrl}/pets`, {
+  //    method: 'POST',
+  //    headers: {
+  //        'content-type': 'application/json',
+  //        'X-Authorization': token,
+  //    },
+  //    body: JSON.stringify({...petData, likes: []})
+  //});
+
+  //let result = await response.json();
+//
+  //return result;
+//};
   
 
 

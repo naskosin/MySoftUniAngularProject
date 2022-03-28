@@ -2,26 +2,54 @@
     <!-- Do not forget to change the path to the image -->
     <img src="/assets/01-azores-fishing.jpg" alt="image">
 
-    <form  method="POST" class="containertext"  (ngSubmit)="formHandler()" >
+    <form   #createCatchForm = "ngForm"class="containertext"  (ngSubmit)="formHandler(createCatchForm)" >
 
-        <h2>Create Publication</h2>
+        <h2>Create Catch</h2>
         <p>Add your fish of lifetime!</p>
 
         <label for="title">Species:</label>
-        <input type="text" id="title" placeholder="Spring in the garden" name="species" value="">
+        <input type="text" #themeSpecies ="ngModel" id="title" placeholder="Spring in the garden" name="species" value="" ngModel required minlength="5">
 
-        <label for="painting-tech">Painting technique:</label>
-        <input type="text" id="painting-tech" placeholder="Oil paints" name="paintTech" value="">
+        <ng-container *ngIf="themeSpecies.touched && themeSpecies.invalid">
+            <p *ngIf="themeSpecies.errors?.['required']" class="input-error">Species is required!</p>
+            <p *ngIf="themeSpecies.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+        </ng-container>
+
+        <label for="painting-tech">Bait:</label>
+        <input type="text" #themeBait = "ngModel" id="painting-tech" placeholder="Oil paints" name="bait" value="" ngModel required minlength="5">
+
+        <ng-container *ngIf="themeBait.touched && themeBait.invalid">
+            <p *ngIf="themeBait.errors?.['required']" class="input-error">Species is required!</p>
+            <p *ngIf="themeBait.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+        </ng-container>
 
         <label for="picture">Fish picture:</label>
-        <input type="text" id="picture" placeholder="http://..." name="artImg" value="">
+        <input type="text" #themeImg = "ngModel" id="picture" placeholder="http://..." name="artImg" value="" ngModel required minlength="5">
 
-        <label for="certificate">Certificate of authenticity:</label>
-        <input type="text" id="certificate" placeholder="Yes" name="certificate" value="">
+        <ng-container *ngIf="themeImg.touched && themeImg.invalid">
+            <p *ngIf="themeImg.errors?.['required']" class="input-error">Species is required!</p>
+            <p *ngIf="themeImg.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+        </ng-container>
 
-    <label for="certificate">Certificate of authenticity:</label>
-        <input type="text" id="certificate" placeholder="Yes" name="certificate" value="">
-        <button class="create-btn">Create</button>
+
+        <label for="certificate">Story:</label>
+        <input type="text" #themeStory="ngModel" id="certificate" placeholder="Yes" name="certificate" value="" ngModel>
+
+        <ng-container *ngIf="themeStory.touched && themeStory.invalid">
+            <p *ngIf="themeStory.errors?.['required']" class="input-error">Species is required!</p>
+            <p *ngIf="themeStory.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+        </ng-container>
+
+
+        <label for="weight">Weight of the fish:</label>
+        <input type="text" id="weight" placeholder="Yes" name="weight" value="">
+        <ng-container *ngIf="themeStory.touched && themeStory.invalid">
+            <p *ngIf="themeStory.errors?.['required']" class="input-error">Species is required!</p>
+            <p *ngIf="themeStory.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+        </ng-container>
+       
+        <button [disabled]="createCatchForm.invalid"class="create-btn">Create</button>
+
 
     </form>
 
