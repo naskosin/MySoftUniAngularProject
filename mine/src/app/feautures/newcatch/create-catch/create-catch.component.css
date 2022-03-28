@@ -20,6 +20,7 @@
         border-style: solid;
         border-color: lightskyblue;
         border-radius: 25px;
+        background-color: lightskyblue;
     }
     
     .createcontainerinfo>img {
@@ -61,11 +62,16 @@
         }
         
         .containertext>input,
+        .containertext>textarea,
         .containertext>button {
             width: 100%;
             border: none;
             padding: 12px;
             border-radius: 3px;
+            
+        }
+        .containertext>textarea{
+            border: solid 2px lightskyblue;
         }
         
         label {
@@ -83,8 +89,8 @@
             color: #656880;
         }
         
-        .containertext>.register-btn,
-        .containertext>.login-btn {
+        .containertext>.create-btn
+        {
             background-image: linear-gradient(to right, #19BEC2, #8C1415);
             display: block;
             color: #fff;

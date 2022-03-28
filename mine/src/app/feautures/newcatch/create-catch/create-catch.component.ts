@@ -26,16 +26,16 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   formHandler(createCatchForm: NgForm):void{
-   //const token:string = this.userService.currentUser.accessToken;
-   //let header = new HttpHeaders({'X-Authorization': token})
-   //
-   //
+   const token:string = this.userService.currentUser.accessToken;
+   let header = new HttpHeaders({'X-Authorization': token})
+   
+   
 
-   //
-   //console.log(header)
-   //this.createService.createCatch({species: "trout", img: 'https://www.algomacountry.com/wp-content/uploads/2015/09/brook-trout-photo6.jpg', _id:"847ec027-f659-4086-8032-5173e2f9c93a", weight: 9}, {headers:header}).subscribe((data)=>{
-   //  console.log(data, "Hi")
-   //})
+   
+   console.log(header)
+   this.createService.createCatch(createCatchForm.value, {headers:header}).subscribe((data)=>{
+     console.log(data, "Hi")
+   })
    console.log(createCatchForm.value)
   }
 }
