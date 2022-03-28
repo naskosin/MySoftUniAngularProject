@@ -17,11 +17,7 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     
   }
-  // httpOptions = {
-  //  headers: new HttpHeaders({
-  //    
-  //  })
-  //};
+  
   
   ngOnInit(): void {
   }
@@ -29,10 +25,6 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
    const token:string = this.userService.currentUser.accessToken;
    let header = new HttpHeaders({'X-Authorization': token})
    
-   
-
-   
-   console.log(header)
    this.createService.createCatch(createCatchForm.value, {headers:header}).subscribe((data)=>{
      console.log(data, "Hi")
    })

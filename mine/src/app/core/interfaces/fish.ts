@@ -4,7 +4,7 @@ export interface IFish
     img: string;
     _id:string;
     weight: number;
-    
+    _ownerId: string
     
 
 }

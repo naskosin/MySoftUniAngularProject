@@ -1,0 +1,17 @@
+ <section class="my-catches"> <img src="" alt="No picture yet">
+<p>{{currentUser.email}}</p>
+<div class="catches" *ngIf="fishes.length!==0">
+<p>Oooops! no catches, change the bait!</p>
+<ul >
+    <li *ngFor="let fish of fishes"><article>
+        <div class="article__img__wrapper">
+        <img class="article__img"  [src]="fish.img" alt=""></div>
+       
+            
+      
+       
+    </article></li>  
+</ul>
+    
+</div>
+</section>
