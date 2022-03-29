@@ -26,21 +26,10 @@ createCatch(userData: {species: string, bait: string, img:string, story:string, 
  
   return this.http.post<IFish>('http://localhost:3030/data/fishes', userData, options)
 }
-
-//export const createCatches(async (petData, token))  => {
-  //let response = await fetch(`${baseUrl}/pets`, {
-  //    method: 'POST',
-  //    headers: {
-  //        'content-type': 'application/json',
-  //        'X-Authorization': token,
-  //    },
-  //    body: JSON.stringify({...petData, likes: []})
-  //});
-
-  //let result = await response.json();
-//
-  //return result;
-//};
+editCatch(id: string, userData: {species: string, bait: string, img:string, story:string, weight: number}, options:{headers: HttpHeaders}) : Observable<IFish>{
+ 
+  return this.http.put<IFish>(`http://localhost:3030/data/fishes/${id}`, userData, options)
+}
   
 
 

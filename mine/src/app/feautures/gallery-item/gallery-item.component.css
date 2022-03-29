@@ -106,4 +106,6 @@ object-fit: fill;
    background-color: white;
    text-align: right;
 }
-   
+.article__button{
+   margin: 15px auto;
+}   

@@ -1,4 +1,7 @@
-<section class="section__main">
+<div *ngIf="!!!fish">
+    Loading...
+  </div>
+<section *ngIf="!!fish" class="section__main">
 <article class="main"><div class="main__img__wrapper"><img class="main__img" [src]="fish.img" alt="No picture"></div>
     <div class= "main__div"><h1>Fish species: {{fish.species}}</h1>
         <h3>The story</h3>
@@ -8,8 +11,9 @@
         Fish often seek out shade when it’s hot and sunny and become more active during the cool hours of the day, just as you or I might.   
     </p>
     <h4>Weight:{{fish.weight}}</h4>
+    <ng-container *ngIf="user._id===fish._ownerId">
     <button><a  [routerLink]="['/editpage', fish._id]">Edit article</a></button>
-
+</ng-container>
 </div></article>
 
 </section>

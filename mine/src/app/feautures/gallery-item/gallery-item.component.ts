@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IFish } from '../../core/interfaces';
+import { IFish, IUser } from '../../core/interfaces';
+import { UserService } from 'src/app/core/user.service';
 
 
 @Component({
@@ -8,8 +9,10 @@ import { IFish } from '../../core/interfaces';
   styleUrls: ['./gallery-item.component.css']
 })
 export class GalleryItemComponent implements OnInit {
-
-  constructor() { }
+user!: IUser;
+  constructor(private userService: UserService) {
+    this.user = this.userService.currentUser
+   }
   @Input() fish!: IFish;
 
   ngOnInit(): void {

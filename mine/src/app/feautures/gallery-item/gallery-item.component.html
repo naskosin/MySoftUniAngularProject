@@ -1,9 +1,11 @@
 <li><article>
     <div class="article__img__wrapper">
     <img class="article__img"  [src]="fish.img" alt=""></div>
-    <button  class="article__button"><a [routerLink]="['/gallery', fish._id]">Details</a></button>
-        <p>This is the biggest tarpoon that i ever catch!</p>
+    
         
+        <p>This is the biggest tarpoon that i ever catch!</p>
+        <div *ngIf="!!user"><button  class="article__button">
+            <a [routerLink]="['/gallery', fish._id]">Details</a></button></div>
   
    
 </article></li>  

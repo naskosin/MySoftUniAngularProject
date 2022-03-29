@@ -20,7 +20,9 @@
         border-style: solid;
         border-color: lightskyblue;
         border-radius: 25px;
+        background-color: lightskyblue;
     }
+    
     
     .registercontainerinfo>img {
         width: 100%;
