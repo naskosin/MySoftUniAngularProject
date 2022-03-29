@@ -7,17 +7,18 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { FormsModule } from '@angular/forms';
 import { CreateCatchComponent } from './newcatch/create-catch/create-catch.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { GallerDetailsComponent } from './galler-details/galler-details.component';
 
 
 
 @NgModule({
-  declarations: [GalleryComponent, GalleryItemComponent, CreateCatchComponent, EditPageComponent],
+  declarations: [GalleryComponent, GalleryItemComponent, GallerDetailsComponent, CreateCatchComponent, EditPageComponent],
   imports: [
     CommonModule,
     RouterModule,
     GalleryRoutingModule,
     FormsModule
   ],
-  exports: [GalleryComponent,CreateCatchComponent, EditPageComponent ]
+  exports: [GalleryComponent,CreateCatchComponent, EditPageComponent, GallerDetailsComponent,]
 })
 export class FeauturesModule { }

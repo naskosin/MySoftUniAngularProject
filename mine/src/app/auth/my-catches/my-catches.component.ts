@@ -10,19 +10,21 @@ import { GalleryService } from 'src/app/core/gallery.service';
 })
 export class MyCatchesComponent implements OnInit {
 fishes!: IFish[]
+user!: IUser;
   constructor(private userService: UserService, private galleryService: GalleryService) { }
 
   ngOnInit(): void {
-    const id = this.userService.currentUser._id
+    this.user = this.userService.currentUser
+    const id = this.user._id
     this.galleryService.getAllCatches$().subscribe(
       data=>{
         this.fishes = Object.values(data).filter(x=>x._ownerId === id);
-        console.log(this.fishes);
+        console.log(this.fishes.length);
         console.log(this.userService.currentUser)
   })
 }
-  get currentUser(): IUser{
-    return this.userService.currentUser
-  }
+  //get currentUser(): IUser{
+  //  return this.userService.currentUser
+  //}
   
 }

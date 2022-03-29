@@ -1,17 +1,22 @@
- <section class="my-catches"> <img src="" alt="No picture yet">
-<p>{{currentUser.email}}</p>
-<div class="catches" *ngIf="fishes.length!==0">
-<p>Oooops! no catches, change the bait!</p>
+ 
+ <section class="my-catches"> 
+     <div class="article__header__img__wrapper">
+<img class="article__header__img" src="assets/fisherman-smiling-holding-tuna-vector-fisherman-smiling-holding-tuna-138952859.jpg" alt="No picture yet"></div>
+<p class="user">Catcher: {{user.email}}</p>
+<div class="nocatches" *ngIf="fishes?.length===0">
+<p>Oooops! no catches, change the bait!</p></div>
+<div class="catches" *ngIf="fishes?.length!==0">
+<p>My catches gallery:</p>
 <ul >
     <li *ngFor="let fish of fishes"><article>
         <div class="article__img__wrapper">
-        <img class="article__img"  [src]="fish.img" alt=""></div>
+        <img class="article__img"  [src]="fish.img" alt="">
        
             
-      
+    </div>
        
     </article></li>  
 </ul>
-    
-</div>
+</div> 
+
 </section>
