@@ -41,7 +41,7 @@ const body ={
 this.userService.login(body).subscribe({
   next: (data)=>{
 
-this.router.navigate(['/gallery'])
+this.router.navigate(['/home'])
 
   },
  error: (err)=>{this.errorMessage = err.error.message}}

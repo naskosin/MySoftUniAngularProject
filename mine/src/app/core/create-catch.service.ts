@@ -30,7 +30,10 @@ editCatch(id: string, userData: {species: string, bait: string, img:string, stor
  
   return this.http.put<IFish>(`http://localhost:3030/data/fishes/${id}`, userData, options)
 }
-  
+deleteCatch(id: string, options:{headers: HttpHeaders}) : Observable<void>{
+ 
+  return this.http.delete<void>(`http://localhost:3030/data/fishes/${id}`, options)
+}  
 
 
 }

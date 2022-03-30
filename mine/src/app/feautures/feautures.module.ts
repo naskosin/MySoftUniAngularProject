@@ -8,17 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { CreateCatchComponent } from './newcatch/create-catch/create-catch.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { GallerDetailsComponent } from './galler-details/galler-details.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 
 @NgModule({
-  declarations: [GalleryComponent, GalleryItemComponent, GallerDetailsComponent, CreateCatchComponent, EditPageComponent],
+  declarations: [GalleryComponent, GalleryItemComponent, GallerDetailsComponent, CreateCatchComponent, EditPageComponent, HomePageComponent],
   imports: [
     CommonModule,
     RouterModule,
     GalleryRoutingModule,
     FormsModule
   ],
-  exports: [GalleryComponent,CreateCatchComponent, EditPageComponent, GallerDetailsComponent,]
+  exports: [GalleryComponent,CreateCatchComponent, EditPageComponent, GallerDetailsComponent,HomePageComponent]
 })
 export class FeauturesModule { }

@@ -2,7 +2,7 @@
 <header class="header">
     <h1>The biggest catches</h1>
     <p *ngIf="isLogged" >Hi, {{currentUser.email}}!</p>
-   <nav> 
+   <nav class="isLogged"> 
     <ul *ngIf="!isLogged"><li><a routerLink="/register">Register</a>
 </li>
 <li>
@@ -18,7 +18,7 @@
     <a href="">Top 10</a> </li>
     
 </ul></nav>
-<nav> 
+<nav class="notLogged"> 
     <ul *ngIf="isLogged">
 <li>
     <a routerLink="/gallery">Gallery</a>
