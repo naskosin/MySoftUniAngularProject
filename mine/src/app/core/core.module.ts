@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 
 
 
+
+
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   imports: [
@@ -14,6 +16,11 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   
   ],
-  exports:[HeaderComponent, FooterComponent]
+  exports:[HeaderComponent, FooterComponent],
+  //providers: [{
+  //  provide: HTTP_INTERCEPTORS,
+  //  useClass: TokenInterceptor,
+  //  multi:true
+  //}]
 })
 export class CoreModule { }

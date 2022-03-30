@@ -9,17 +9,18 @@ import { CreateCatchComponent } from './newcatch/create-catch/create-catch.compo
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { GallerDetailsComponent } from './galler-details/galler-details.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TopFiveComponent } from './top-five/top-five.component';
 
 
 
 @NgModule({
-  declarations: [GalleryComponent, GalleryItemComponent, GallerDetailsComponent, CreateCatchComponent, EditPageComponent, HomePageComponent],
+  declarations: [GalleryComponent, GalleryItemComponent, GallerDetailsComponent, CreateCatchComponent, EditPageComponent, HomePageComponent, TopFiveComponent],
   imports: [
     CommonModule,
     RouterModule,
     GalleryRoutingModule,
     FormsModule
   ],
-  exports: [GalleryComponent,CreateCatchComponent, EditPageComponent, GallerDetailsComponent,HomePageComponent]
+  exports: [GalleryComponent,CreateCatchComponent, EditPageComponent, GallerDetailsComponent,HomePageComponent, TopFiveComponent]
 })
 export class FeauturesModule { }

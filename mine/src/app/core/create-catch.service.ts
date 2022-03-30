@@ -22,9 +22,9 @@ export class CreateCatchService {
 
 
 }
-createCatch(userData: {species: string, bait: string, img:string, story:string, weight: number}, options:{headers: HttpHeaders}) : Observable<IFish>{
+createCatch(userData: {species: string, bait: string, img:string, story:string, weight: number}) : Observable<IFish>{
  
-  return this.http.post<IFish>('http://localhost:3030/data/fishes', userData, options)
+  return this.http.post<IFish>('http://localhost:3030/data/fishes', userData)
 }
 editCatch(id: string, userData: {species: string, bait: string, img:string, story:string, weight: number}, options:{headers: HttpHeaders}) : Observable<IFish>{
  

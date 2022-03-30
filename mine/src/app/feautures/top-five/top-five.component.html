@@ -1,0 +1,6 @@
+<section class="top" *ngFor="let fish of fishes">
+<div class="top__img__wrapper">
+    <img [src]="fish.img" alt="">
+    <p><span>Weight: {{fish.species | lowercase}}</span></p>
+</div>
+</section>

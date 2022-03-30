@@ -14,7 +14,7 @@ fishes!: IFish[]
   constructor(private galleryService: GalleryService, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.galleryService.getAllCatches$().subscribe(
+    this.galleryService.gettopFive().subscribe(
       data=>{
         this.fishes = Object.values(data).sort((a, b)=>{
           return b.weight-a.weight

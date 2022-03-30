@@ -18,4 +18,7 @@ export class GalleryService {
     getCatchOne(id:string): Observable<IFish>{
       return this.http.get<IFish>(`http://localhost:3030/data/fishes/${id}`)
     }
+    gettopFive(): Observable<IFish[]>{
+      return this.http.get<IFish[]>(`http://localhost:3030/data/fishes?5`)
+    }
 }

@@ -34,7 +34,7 @@
 
 
         <label for="certificate">Story:</label>
-        <textarea type="text" #themeStory="ngModel" id="certificate" rows="5" name="story"  ngModel></textarea>
+        <textarea type="text" #themeStory="ngModel" id="certificate" rows="5" name="story" required ngModel></textarea>
 
         <ng-container *ngIf="themeStory.touched && themeStory.invalid">
             <p *ngIf="themeStory.errors?.['required']" class="input-error">Species is required!</p>
