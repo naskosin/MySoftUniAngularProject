@@ -38,7 +38,7 @@
 }
 .header nav{
     display: inline-block;
-    margin: 70px 0px 0px 100px ;
+    margin: 90px 0px 0px 100px;
     text-align: right;
 }
 main{
@@ -66,4 +66,27 @@ p{
     right: 20px;
     color: white;
     background-color: aqua;
+}
+#not__logged>li{
+   
+        text-align: center;
+        display: inline-block;
+        margin:0 0 30px 40px;
+        border-radius: 4px;
+        background-color: lightskyblue;
+        border-top-left-radius: 30px; 
+    
+}
+
+#not__logged>ul{
+    
+    padding:0;
+    display: inline-block;
+   
+
+}
+#not__logged{
+    display: inline-block;
+    margin: 90px 0px 0px 350px ;
+    text-align: right;
 }

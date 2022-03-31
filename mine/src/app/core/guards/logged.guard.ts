@@ -11,11 +11,11 @@ export class LoggedGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(!!!this.userService.isLogged){
-        console.log(this.userService.isLogged)
-        return true;}
-     
+      if(this.userService.isLogged){
         return this.route.createUrlTree(['/home'])
+        }
+     
+        return true;
   
 }
 }

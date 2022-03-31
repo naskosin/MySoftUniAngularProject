@@ -40,7 +40,8 @@ const body ={
 };
 this.userService.login(body).subscribe({
   next: (data)=>{
-
+    localStorage.setItem("Token", data.accessToken)
+    localStorage.setItem("isLogged", 'true')
 this.router.navigate(['/home'])
 
   },

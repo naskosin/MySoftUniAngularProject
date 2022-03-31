@@ -16,7 +16,12 @@ export interface CreateDto{
 export class UserService {
 
 currentUser!: IUser;
-get isLogged(){return !!this.currentUser}
+get isLogged(): boolean{
+  if(localStorage.getItem("Token")){
+    console.log(localStorage.getItem("Token"))
+  return true}
+return false;
+}
   
 
 constructor(private http: HttpClient) { }

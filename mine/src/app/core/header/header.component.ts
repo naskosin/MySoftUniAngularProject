@@ -14,12 +14,15 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.userService.currentUser)
+    console.log(this.userService.isLogged)
   }
  get isLogged(): boolean{
     return this.userService.isLogged;
   }
   get currentUser(): IUser{
     return this.userService.currentUser
+  }
+  Logout():void{
+    return localStorage.removeItem("Token")
   }
 }
