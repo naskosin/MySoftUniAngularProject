@@ -1,6 +1,11 @@
+@import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
+
+
+
+
 .mainbox {
-    margin:200px auto;
-    height: 550px;
+    margin:200px auto 0 auto;
+    height: 450px;
     width: 550px;
     position: relative;
   }
@@ -19,7 +24,7 @@
     font-size: 8.5rem;
     left: 42%;
     top: 15%;
-    color: #95c2de;
+    color: black;
   }
   
    .err2 {

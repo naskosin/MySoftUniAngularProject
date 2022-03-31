@@ -8,12 +8,12 @@
             <h2>Login</h2>
             <p>The biggest catches!</p>
 
-            <label for="uses">Uses:</label>
+            <label for="uses">User:</label>
             <input type="text" formControlName="email" id="uses" placeholder="ivan_00" name="email">
 
             <ng-container *ngIf = "loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
-                <p *ngIf="loginFormGroup.controls['email'].errors?.['required']" class="errors">Email is required!</p>
-                <p *ngIf="loginFormGroup.controls['email'].errors?.['email']" class="errors">Email is invalid!</p>
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['required']" id="errors">Email is required!</p>
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['email']" id="errors">Email is invalid!</p>
             </ng-container>
 
             
@@ -21,17 +21,17 @@
             <input type="password"  formControlName="password"  id="password" placeholder="*****" name="password">
 
             <ng-container *ngIf = "loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid">
-                <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" class="errors">Password is required!</p>
-                <p *ngIf="loginFormGroup.controls['password'].errors?.['minlength']" class="errors">Password is invalid!</p>
+                <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" id="errors">Password is required!</p>
+                <p *ngIf="loginFormGroup.controls['password'].errors?.['minlength']" id="errors">Password is invalid!</p>
             </ng-container>
+            <p *ngIf = "errorMessage"id="errors">{{errorMessage}}</p>
 
-
-            <button class="login-btn" [disabled] = "this.loginFormGroup.invalid">Login</button>
+            <button class="button" [disabled]="this.loginFormGroup.invalid">Login</button>
             <div class="card-no-account">
                 <p>Don't have an account? <a routerLink="/register">Sign up</a>.</p>
             </div>
-
+            
         </form>
-        <p>{{errorMessage}}</p>
+        
     </div>
 </section>

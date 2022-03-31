@@ -6,7 +6,10 @@ import { CreateCatchComponent } from './newcatch/create-catch/create-catch.compo
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { TopFiveComponent } from './top-five/top-five.component';
 const routes: Routes =[
-    
+    {
+        path: 'gallery',
+        component: GalleryComponent
+    },
     {
         path: 'gallery/:fishid',
         component: GallerDetailsComponent

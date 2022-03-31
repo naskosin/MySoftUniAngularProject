@@ -20,27 +20,26 @@ const routes: Routes = [
     path: 'home',
     component: HomePageComponent
 },
-{
-  path: 'gallery',
-  component: GalleryComponent
-},
-{
-  path: 'login',
-  canActivate: [LoggedGuard],
-  component: LoginComponent
-},
-{
-  path: 'register',
-  canActivate: [LoggedGuard],
-  component: RegisterComponent
-},
-{
- path: 'mycatches',
- canActivate: [AuthGuard],
- component: MyCatchesComponent
-},
-{
-  path: '**',
+//{
+//  path: 'gallery',
+//  component: GalleryComponent
+//},
+//{
+//  path: 'login',
+//  canActivate: [LoggedGuard],
+//  component: LoginComponent
+//},
+//{
+//  path: 'register',
+//  canActivate: [LoggedGuard],
+//  component: RegisterComponent
+//},
+//{
+// path: 'mycatches',
+// canActivate: [AuthGuard],
+// component: MyCatchesComponent
+//},
+{  path: '**',
   pathMatch: 'full',
   component: PageNotFoundComponent
 },

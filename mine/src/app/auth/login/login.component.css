@@ -12,11 +12,11 @@
 .container {
     background-color: #fff;
     width: 60%;
-    height: 438px;
+    height: 100%;
 padding: 0px;
     display: grid;
-    grid-template-columns: stretch;
-    grid-template-columns: 40% 60%;
+   
+    grid-template-columns: 30% 60%;
     place-items: center;
     line-height: 1.5;
    margin: 0 auto;
@@ -123,4 +123,20 @@ span {
 
 .errors{
     border: 3px solid red;
+}
+.button{
+    margin-top: 20px;
+    background-color: #19BEC2;
+}
+.button:disabled{
+    margin-top: 20px;
+    background-color: lightgrey;
+}
+#errors{
+    background: rgb(231, 94, 122);
+    color:white;
+    padding: 3px;
+    border: solid 2px crimson;
+    border-radius: 5px;
+    
 }

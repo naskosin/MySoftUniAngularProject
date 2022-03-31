@@ -55,11 +55,12 @@
             color: #1A2250;
         }
         
-        .containertext>p {
+        .containertext p {
             font-size: 14px;
             color: #3B4169;
             margin: 2px 0;
             margin-bottom: 15px;
+            margin-left: 20px;
         }
         
         .containertext>input,
@@ -86,23 +87,35 @@
             color: #656880;
         }
         
-        .containertext>.register-btn,
-        .containertext>.login-btn {
-            background-image: linear-gradient(to right, #19BEC2, #8C1415);
+        .containertext button
+       {
+            text-align: center;
+            background-color:  #19BEC2 ;
             display: block;
             color: #fff;
             font-size: 1rem;
             cursor: pointer;
-            margin-top: 1.6em;
+            margin: 1.6em auto 0 16px ;
             box-shadow: 0 5px 15px #89caff94;
             transition: box-shadow .3s ease-in-out;
         }
-        
-        .register-btn:hover,
-        .login-btn:hover {
-            background-image: linear-gradient(to right, #2dd2d4, #8C1415);
-            box-shadow: none;
+        button:disabled{
+            background-color:  #abeff0 ;
         }
-        header{
-            display:none
+       
+        #button{
+            margin-top: 20px;
+            background-color: #19BEC2;
+        }
+        #button:disabled{
+            margin-top: 20px;
+            background-color: lightgrey;
+        }
+        #errors{
+            background: rgb(231, 94, 122);
+            color:white;
+            padding: 3px;
+            border: solid 2px crimson;
+            border-radius: 5px;
+            margin-left: 30px;
         }
