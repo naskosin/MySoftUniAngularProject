@@ -8,6 +8,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { GalleryComponent } from './feautures/gallery/gallery.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoggedGuard } from './core/guards/logged.guard';
+import { AboutPageComponent } from './feautures/pages/about-page/about-page.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,13 @@ const routes: Routes = [
     path: 'home',
     component: HomePageComponent
 },
+{
+  path: 'about',
+  component: AboutPageComponent
+},
+
+
+
 //{
 //  path: 'gallery',
 //  component: GalleryComponent

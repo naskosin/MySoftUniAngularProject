@@ -1,8 +1,12 @@
-<section class="top" *ngFor="let fish of fishes">
-    <p class="top__description"><span class="top__span">Weight: </span>{{fish.weight}}</p>
+
+<section>
+<article class="top" *ngFor="let fish of fishes; let i = index">
+    <p class="top__description"><span class="top__span">Number:   </span>{{i+1}}</p>
 <div class="top__img__wrapper">
     
     <img [src]="fish.img" alt="">
     
 </div>
+<p class="top__description__bottom"><span class="top__span__bottom">Weight: </span>{{fish.weight}}</p>
+</article>
 </section>
