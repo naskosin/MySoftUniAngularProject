@@ -10,8 +10,9 @@ import { AuthModule } from './auth/auth.module';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { RouterModule } from '@angular/router';
-
 import { FeauturesModule } from './feautures/feautures.module';
+
+
 
 
 @NgModule({
@@ -26,8 +27,8 @@ import { FeauturesModule } from './feautures/feautures.module';
     RouterModule,
     AuthModule,
     CoreModule,
-    HttpClientModule,
     FeauturesModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
   ],

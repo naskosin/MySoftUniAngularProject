@@ -17,36 +17,17 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'home',
 },
+
 {
     path: 'home',
     component: HomePageComponent
 },
+
 {
   path: 'about',
   component: AboutPageComponent
 },
 
-
-
-//{
-//  path: 'gallery',
-//  component: GalleryComponent
-//},
-//{
-//  path: 'login',
-//  canActivate: [LoggedGuard],
-//  component: LoginComponent
-//},
-//{
-//  path: 'register',
-//  canActivate: [LoggedGuard],
-//  component: RegisterComponent
-//},
-//{
-// path: 'mycatches',
-// canActivate: [AuthGuard],
-// component: MyCatchesComponent
-//},
 {  path: '**',
   pathMatch: 'full',
   component: PageNotFoundComponent

@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { RouterModule } from '@angular/router';
+import { TokenInterceptor } from './token.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -17,10 +19,10 @@ import { RouterModule } from '@angular/router';
   
   ],
   exports:[HeaderComponent, FooterComponent],
-  //providers: [{
-  //  provide: HTTP_INTERCEPTORS,
-  //  useClass: TokenInterceptor,
-  //  multi:true
-  //}]
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi:true
+  }]
 })
 export class CoreModule { }

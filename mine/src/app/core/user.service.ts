@@ -18,8 +18,7 @@ export class UserService {
 currentUser!: IUser;
 get isLogged(): boolean{
   if(localStorage.getItem("Token")){
-    console.log(localStorage.getItem("Token"))
-  return true}
+  return true;}
 return false;
 }
   
