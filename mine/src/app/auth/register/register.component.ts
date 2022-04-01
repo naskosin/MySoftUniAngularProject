@@ -4,7 +4,7 @@ import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms'
 import { passwordMatch } from '../utils';
 import { Router } from '@angular/router';
 
-export interface CreateDto {username: string,
+export interface CreateDto {
   email: string, password: string
 }
 
@@ -37,29 +37,16 @@ export class RegisterComponent implements OnInit{
     console.log(this.registerFormGroup.value);
 
     const body: CreateDto={
-      username: "Hans",
       email: email,
       password: passwords.password
     };
     this.userService.register(body).subscribe((data)=>console.log(data))
-    this.router.navigate(['/gallery'])
+    this.router.navigate(['/login'])
   }
 
   ngOnInit(): void {
     
   }
  
-//handleRegister(): void{
-//  const {username, email, password} = this.myRegister.value;
-//  console.log(this.myRegister.value)
-//  const body : CreateDto = {
-//    username: username,
-//    email: email,
-//    password: password,
-//  }
-//is.userService.register(body).subscribe(data=>{
-//console.log(data)
-//
-//
-//}
+
 }

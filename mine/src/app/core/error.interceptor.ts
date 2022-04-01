@@ -24,7 +24,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       if(err.status===409){
         
         alert("This email already exist")
-      this.router.navigate(['/login'])
+      this.router.navigate(['/register'])
       }
       if(err.status===403){
        
