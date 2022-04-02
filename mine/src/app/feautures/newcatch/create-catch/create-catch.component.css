@@ -89,9 +89,9 @@
             color: #656880;
         }
         
-        .containertext>.create-btn
+        .containertext>.createbtn
         {
-            background-image: linear-gradient(to right, #19BEC2, #8C1415);
+            background-color: #19BEC2;
             display: block;
             color: #fff;
             font-size: 1rem;
@@ -101,8 +101,14 @@
             transition: box-shadow .3s ease-in-out;
         }
         
-        .register-btn:hover,
-        .login-btn:hover {
-            background-image: linear-gradient(to right, #2dd2d4, #8C1415);
-            box-shadow: none;
+        .button{
+            margin-left: 15px;
+            background-color: #19BEC2;
+            padding: 20px;
+        }
+        .button:disabled{
+            margin-left: 15px;
+            background-color: lightgrey;
+            padding: 20px;
+
         }

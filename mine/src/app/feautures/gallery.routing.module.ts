@@ -7,15 +7,16 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 import { TopFiveComponent } from './top-five/top-five.component';
 const routes: Routes =[
     {
-        path: 'gallery',
+        path: '',
+        pathMatch: 'full',
         component: GalleryComponent
     },
     {
-        path: 'gallery/:fishid',
+        path: ':fishid',
         component: GallerDetailsComponent
     },
     {
-        path: 'createCatch',
+        path: 'catch/create',
         component: CreateCatchComponent
     },
     {
@@ -23,7 +24,7 @@ const routes: Routes =[
         component: EditPageComponent
     },
     {
-        path: 'topFive',
+        path: 'catch/topFive',
         component: TopFiveComponent
     }
 ]

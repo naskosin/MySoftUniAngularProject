@@ -22,7 +22,16 @@ const routes: Routes = [
     path: 'home',
     component: HomePageComponent
 },
+{
+  path: 'user',
+  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
 
+},
+{
+  path: 'gallery',
+  loadChildren: () => import('./feautures/feautures.module').then(m => m.FeauturesModule)
+
+},
 {
   path: 'about',
   component: AboutPageComponent

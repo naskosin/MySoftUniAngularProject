@@ -8,7 +8,7 @@
         <p>Add your fish of lifetime!</p>
 
         <label for="title">Species:</label>
-        <input type="text" #themeSpecies ="ngModel" id="title" placeholder="Spring in the garden" name="species" value="" ngModel required minlength="5">
+        <input type="text" #themeSpecies ="ngModel" id="title" placeholder="Trout" name="species" value="" ngModel required minlength="5">
 
         <ng-container *ngIf="themeSpecies.touched && themeSpecies.invalid">
             <p *ngIf="themeSpecies.errors?.['required']" class="input-error">Species is required!</p>
@@ -16,7 +16,7 @@
         </ng-container>
 
         <label for="painting-tech">Bait:</label>
-        <input type="text" #themeBait = "ngModel" id="painting-tech" placeholder="Oil paints" name="bait" value="" ngModel required minlength="5">
+        <input type="text" #themeBait = "ngModel" id="painting-tech" placeholder="Lure" name="bait" value="" ngModel required minlength="5">
 
         <ng-container *ngIf="themeBait.touched && themeBait.invalid">
             <p *ngIf="themeBait.errors?.['required']" class="input-error">Species is required!</p>
@@ -34,22 +34,22 @@
 
 
         <label for="certificate">Story:</label>
-        <textarea type="text" #themeStory="ngModel" id="certificate" rows="5" name="story" required ngModel></textarea>
+        <textarea type="text" #themeStory="ngModel" placeholder="This day..." id="certificate" rows="5" name="story" required ngModel minlength="50"></textarea>
 
         <ng-container *ngIf="themeStory.touched && themeStory.invalid">
             <p *ngIf="themeStory.errors?.['required']" class="input-error">Species is required!</p>
-            <p *ngIf="themeStory.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+            <p *ngIf="themeStory.errors?.['minlength']" class="input-error">Must be at least 50 characters long!</p>
         </ng-container>
 
 
         <label for="weight">Weight of the fish:</label>
-        <input type="text" id="weight" placeholder="Yes" name="weight" value="">
+        <input type="text" id="weight" placeholder="10" name="weight" value="" required ngModel>
         <ng-container *ngIf="themeStory.touched && themeStory.invalid">
             <p *ngIf="themeStory.errors?.['required']" class="input-error">Species is required!</p>
             <p *ngIf="themeStory.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
         </ng-container>
        
-        <button [disabled]="createCatchForm.invalid"class="create-btn">Create</button>
+        <button [disabled]="createCatchForm.invalid"class="button">Create</button>
 
 
     </form>

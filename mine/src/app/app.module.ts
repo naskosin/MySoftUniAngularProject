@@ -27,7 +27,7 @@ import { FeauturesModule } from './feautures/feautures.module';
     RouterModule,
     AuthModule,
     CoreModule,
-    FeauturesModule,
+  
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
