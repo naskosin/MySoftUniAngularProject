@@ -5,6 +5,7 @@ import { GallerDetailsComponent } from './galler-details/galler-details.componen
 import { CreateCatchComponent } from './newcatch/create-catch/create-catch.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { TopFiveComponent } from './top-five/top-five.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes =[
     {
         path: '',
@@ -13,11 +14,14 @@ const routes: Routes =[
     },
     {
         path: ':fishid',
-        component: GallerDetailsComponent
+        component: GallerDetailsComponent,
+        canActivate: [AuthGuard]
+
     },
     {
         path: 'catch/create',
-        component: CreateCatchComponent
+        component: CreateCatchComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'editpage/:fishid',
@@ -25,7 +29,9 @@ const routes: Routes =[
     },
     {
         path: 'catch/topFive',
-        component: TopFiveComponent
+        component: TopFiveComponent,
+        canActivate: [AuthGuard]
+
     }
 ]
 

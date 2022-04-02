@@ -7,6 +7,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyCatchesComponent } from './my-catches/my-catches.component';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -19,6 +20,7 @@ import { MyCatchesComponent } from './my-catches/my-catches.component';
   ],
   imports: [
     CommonModule,
+  
     AuthRoutingModule,
     HttpClientModule,
     ReactiveFormsModule

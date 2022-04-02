@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
 import { MyCatchesComponent } from './my-catches/my-catches.component'
 import { LoggedGuard } from '../core/guards/logged.guard'
+import { AuthGuard } from '../core/guards/auth.guard'
 
 const routes: Routes = [
    {
@@ -18,6 +19,7 @@ const routes: Routes = [
    },
   {
       path: 'mycatches',
+      canActivate:  [AuthGuard],
       component: MyCatchesComponent
   }
 ]
