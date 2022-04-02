@@ -25,9 +25,7 @@ return false;
 
 constructor(private http: HttpClient) { }
 
-logOut(): void{
 
-}
 
 login(userData: {email: string, password: string}): Observable<IUser>{
   return this.http.post<IUser>('http://localhost:3030/users/login', userData).pipe(tap(user=>this.currentUser=user))
@@ -37,6 +35,10 @@ login(userData: {email: string, password: string}): Observable<IUser>{
   }
   singleUser(options:{headers:HttpHeaders}): Observable<IUser>{
     return this.http.get<IUser>('http://localhost:3030/users/me',options)
-
   }
+  logOut(options:{headers:HttpHeaders}): Observable<void>{
+    return this.http.get<void>('http://localhost:3030/users/logout', options)
+  }
+
+  
 }
