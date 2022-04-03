@@ -1,5 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
-import { AuthService } from '../auth.service';
+
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/user.service';
 import { Router } from '@angular/router';
@@ -24,7 +24,7 @@ loginFormGroup: FormGroup = this.formBuilder.group({
   'password': new FormControl('', [Validators.required, Validators.minLength(6)])
 })
  
-  constructor(private authservice: AuthService, private userService: UserService, private formBuilder: FormBuilder, private router: Router) { 
+  constructor( private userService: UserService, private formBuilder: FormBuilder, private router: Router) { 
 
   }
   ngOnInit(): void {
@@ -41,8 +41,8 @@ const body ={
 this.userService.login(body).subscribe({
   next: (data)=>{
     console.log(data)
-    localStorage.setItem("Token", data.accessToken)
-    localStorage.setItem("isLogged", 'true')
+  localStorage.setItem("Token", data.accessToken)
+  localStorage.setItem("isLogged", 'true')
 this.router.navigate(['/home'])
 
   },

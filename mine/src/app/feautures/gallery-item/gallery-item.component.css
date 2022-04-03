@@ -109,3 +109,9 @@ object-fit: fill;
 .article__button{
    margin: 15px auto;
 }   
+
+
+a{
+    text-decoration: none;
+    
+}

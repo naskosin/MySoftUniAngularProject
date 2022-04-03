@@ -15,18 +15,26 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.userService.isLogged)
+    console.log(this.userService.currentUser)
   }
  get isLogged(): boolean{
     return this.userService.isLogged;
   }
   get currentUser(): IUser{
-    return this.userService.currentUser
+    if(!!!this.userService.currentUser){
+      localStorage.removeItem('Token');
+      localStorage.setItem('isLogged', 'false');
+      
+    }
+    return this.userService.currentUser;
   }
   Logout():void{
  const token:string = this.userService.currentUser.accessToken;
  let header = new HttpHeaders({'X-Authorization': token})
- this.userService.logOut({headers: header}).subscribe(data=>console.log(data))
-    return localStorage.removeItem("Token")
+ this.userService.logOut({headers: header}).subscribe(data=>this.userService.currentUser=data);
+
+
+    return ;
+
   }
 }

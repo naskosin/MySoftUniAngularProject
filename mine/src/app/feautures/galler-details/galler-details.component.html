@@ -9,8 +9,8 @@
 
     <p><span>Weight: </span>{{fish.weight}} kg.</p>
     <ng-container *ngIf="user._id===fish._ownerId">
-        <button (click)="deleteHandler()">Delete article</button>
-    <button><a  [routerLink]="['/gallery/editpage', fish._id]">Edit article</a></button>
+        <button class="delete" (click)="deleteHandler()">Delete article</button>
+    <button class = "edit"><a  [routerLink]="['/gallery/editpage', fish._id]">Edit article</a></button>
 </ng-container>
 </div></article>
 
