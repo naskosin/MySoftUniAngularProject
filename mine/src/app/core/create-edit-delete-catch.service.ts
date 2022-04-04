@@ -17,7 +17,7 @@ export class CreateCatchService {
   
   accessToken: string = "";
   
-  //headers.append("Authorization","Bearer " +t);
+
 
   constructor(private userService: UserService, private http:HttpClient) { 
     

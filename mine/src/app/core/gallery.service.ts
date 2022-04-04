@@ -22,6 +22,6 @@ export class GalleryService {
       return this.http.get<IFish>(`${apiUrl}/data/fishes/${id}`)
     }
     gettopFive(): Observable<IFish[]>{
-      return this.http.get<IFish[]>(`${apiUrl}/data/fishes?5`)
+      return this.http.get<IFish[]>(`${apiUrl}/data/fishes?5`).pipe(map(data=>Object.values(data)));
     }
 }

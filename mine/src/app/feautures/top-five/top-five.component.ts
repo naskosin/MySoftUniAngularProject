@@ -14,7 +14,7 @@ fishes!: IFish[];
   ngOnInit(): void {
     this.galleryService.getAllCatches$().subscribe(
       data=>{
-        this.fishes = Object.values(data).sort((a, b)=>{
+        this.fishes = data.sort((a, b)=>{
           return b.weight-a.weight
         });
         console.log(data);

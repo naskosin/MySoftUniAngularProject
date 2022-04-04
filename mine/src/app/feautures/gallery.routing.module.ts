@@ -15,7 +15,13 @@ const routes: Routes =[
     {
         path: ':fishid',
         component: GallerDetailsComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+      // children: [{
+      //  path: ':fishid',
+      //  component: GallerDetailsComponent,
+      // }
+      //  
+      // ]
 
     },
     {

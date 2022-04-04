@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/core/user.service';
-import { CreateCatchService } from 'src/app/core/create-catch.service';
+import { CreateCatchService } from 'src/app/core/create-edit-delete-catch.service';
 import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 

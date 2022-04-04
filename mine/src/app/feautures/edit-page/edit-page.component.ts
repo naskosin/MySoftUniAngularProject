@@ -4,7 +4,7 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/core/user.service';
 import { IFish } from 'src/app/core/interfaces';
 import { GalleryService } from 'src/app/core/gallery.service';
-import { CreateCatchService } from 'src/app/core/create-catch.service';
+import { CreateCatchService } from 'src/app/core/create-edit-delete-catch.service';
 import { HttpHeaders } from '@angular/common/http';
 
 @Component({

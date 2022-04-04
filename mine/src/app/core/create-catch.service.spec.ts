@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CreateCatchService } from './create-catch.service';
+import { CreateCatchService } from './create-edit-delete-catch.service';
 
 describe('CreateCatchService', () => {
   let service: CreateCatchService;
