@@ -56,7 +56,7 @@ comments!: IComment[];
    const id: string = this.userService.currentUser._id;
   const email: string = this.userService.currentUser.email;
   const {comment} = createPostForm.value;
-this.commentService.createComment({comment: comment, ownerId: id, email, themeId: this.id},{headers: header}).subscribe(
+this.commentService.createComment({comment: comment,  email, themeId: this.id},{headers: header}).subscribe(
   data=>{console.log(Object.values(data))
   }
 )

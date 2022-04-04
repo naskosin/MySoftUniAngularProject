@@ -4,7 +4,7 @@ export interface IComment
     
   email:string;
 themeId : string;
-    _ownerId: string
+
     
 
 }
