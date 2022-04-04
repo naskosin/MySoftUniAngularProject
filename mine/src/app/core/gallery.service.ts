@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {IFish} from './interfaces';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+import { environment } from '../../environments/environment'
+import { map } from 'rxjs/operators';
+const apiUrl = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +15,13 @@ export class GalleryService {
    
     }
     getAllCatches$(): Observable<IFish[]>{
-      return this.http.get<IFish[]>('http://localhost:3030/data/fishes')
+      return this.http.get<IFish[]>(`${apiUrl}/data/fishes`).pipe(map(data=>Object.values(data)));
 
   }
     getCatchOne(id:string): Observable<IFish>{
-      return this.http.get<IFish>(`http://localhost:3030/data/fishes/${id}`)
+      return this.http.get<IFish>(`${apiUrl}/data/fishes/${id}`)
     }
     gettopFive(): Observable<IFish[]>{
-      return this.http.get<IFish[]>(`http://localhost:3030/data/fishes?5`)
+      return this.http.get<IFish[]>(`${apiUrl}/data/fishes?5`)
     }
 }

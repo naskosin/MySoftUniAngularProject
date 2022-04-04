@@ -32,9 +32,10 @@ export class HeaderComponent implements OnInit {
  const token:string = this.userService.currentUser.accessToken;
  let header = new HttpHeaders({'X-Authorization': token})
  this.userService.logOut({headers: header}).subscribe(data=>this.userService.currentUser=data);
+ 
+ 
 
-
-    return ;
+    return localStorage.removeItem("Token"),     localStorage.setItem('isLogged', 'false');
 
   }
 }

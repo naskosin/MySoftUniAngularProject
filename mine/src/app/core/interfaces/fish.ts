@@ -8,7 +8,7 @@ export interface IFish
   story: string;
     weight: number;
     _id:string;
-  
+    _createdOn: number
     _ownerId: string
     
 

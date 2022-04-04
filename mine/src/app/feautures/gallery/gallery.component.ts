@@ -16,9 +16,7 @@ fishes!: IFish[]
   ngOnInit(): void {
     this.galleryService.gettopFive().subscribe(
       data=>{
-        this.fishes = Object.values(data).sort((a, b)=>{
-          return b.weight-a.weight
-        });
+        this.fishes = data;
         console.log(data);
         console.log(this.userService.currentUser)
       }

@@ -16,8 +16,8 @@ export class LoggedGuard implements CanActivate {
         
         return this.route.createUrlTree(['/home'])
         }
+        console.log(!!this.userService.currentUser)
         
-        console.log(this.userService.currentUser)
         return true;
   
 }
