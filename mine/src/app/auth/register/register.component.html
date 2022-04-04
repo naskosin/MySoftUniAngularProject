@@ -7,8 +7,8 @@
             <h2>Register</h2>
             <p>Register to upload your catch and view the other fishes.</p>
 
-            <label for="email">Username:</label>
-            <input type="text" formControlName= "email" id="username" placeholder="ivan_00" name="email"/>
+            <label for="email">Email:</label>
+            <input type="text" formControlName= "email" id="username" placeholder="nasko@abv.bg" name="email"/>
             <ng-container *ngIf = "registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
                 <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" id="errors">Email is required!</p>
                 <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" id="errors">Email is invalid!</p>
@@ -21,7 +21,7 @@
 <div class="passwords" formGroupName="passwords">
 
             <label for="password">Password:</label>
-            <input type="password" formControlName="password" id="password" placeholder="*****" name="password"/>
+            <input type="password" formControlName="password" id="password" placeholder="******" name="password"/>
             <ng-container *ngIf="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid">
                 <p *ngIf="passwordsGroup.controls['password'].errors?.['required']" id="errors">Password is required!</p>
                 <p *ngIf="passwordsGroup.controls['password'].errors?.['minlength']" id="errors">Password is invalid!</p>

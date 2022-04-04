@@ -102,3 +102,11 @@
             padding: 20px;
 
         }
+        #input-error{
+            background: rgb(231, 94, 122);
+            color:white;
+            padding: 3px;
+            border: solid 2px crimson;
+            border-radius: 5px;
+            margin-left: 15px;
+        }

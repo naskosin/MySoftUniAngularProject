@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/core/user.service';
 import { IFish } from 'src/app/core/interfaces';
 import { GalleryService } from 'src/app/core/gallery.service';
@@ -15,7 +15,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class EditPageComponent implements OnInit {
   id!: string;
   fish!: IFish;
-  constructor(private userService: UserService,private activeSnapshot: ActivatedRoute, private galleryService: GalleryService, private createService: CreateCatchService,) { }
+  constructor(private userService: UserService,private activeSnapshot: ActivatedRoute, private galleryService: GalleryService, private createService: CreateCatchService, private router: Router) { }
 @ViewChild('createCatchForm') createCatchForm!: NgForm
   ngOnInit(): void {
     this.id = this.activeSnapshot.snapshot.params['fishid'];
@@ -38,6 +38,7 @@ export class EditPageComponent implements OnInit {
     console.log(data, "Hi")
   })
   console.log(createCatchForm.value)
-  
+  this.router.navigate([`gallery/${this.id}`])
+
 }
 }
