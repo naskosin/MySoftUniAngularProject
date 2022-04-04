@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryService } from 'src/app/core/gallery.service';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
-import { IFish, IUser } from 'src/app/core/interfaces';
+import { IFish, IUser, IComment } from 'src/app/core/interfaces';
 import { Router } from '@angular/router';
 
 import { UserService } from 'src/app/core/user.service';
 import { CreateCatchService } from 'src/app/core/create-catch.service';
 import { HttpHeaders } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+import { CommentService } from 'src/app/core/comment.service';
 
 @Component({
   selector: 'app-galler-details',
@@ -17,8 +19,10 @@ export class GallerDetailsComponent implements OnInit {
 fish!: IFish;
 id!: string;
 user! :IUser;
+email!: string;
+comments!: IComment[];
 
-  constructor(private galleryService: GalleryService, private activeSnapshot: ActivatedRoute, private userService: UserService, public createCatch: CreateCatchService, private router:Router) { }
+  constructor(private galleryService: GalleryService, private activeSnapshot: ActivatedRoute, private commentService: CommentService,private userService: UserService, public createCatch: CreateCatchService, private router:Router) { }
     
 
   ngOnInit(): void {
@@ -40,5 +44,18 @@ user! :IUser;
    confirm("Are you sure to delete?")
     this.createCatch.deleteCatch(this.id, {headers: header}).subscribe(data=>this.router.navigate(['/gallery']))
   }
+  formHandler(createPostForm: NgForm): void{
+    this.id = this.activeSnapshot.snapshot.params['fishid'];
+    const token:string = this.userService.currentUser.accessToken;
+   let header = new HttpHeaders({'X-Authorization': token});
+   const id: string = this.userService.currentUser._id;
+  const email: string = this.userService.currentUser.email;
+  const {comment} = createPostForm.value;
+this.commentService.createComment({comment: comment, ownerId: id, email, themeId: this.id},{headers: header}).subscribe(
+  data=>{console.log(data);
   }
+)
+this.router.navigate([`gallery/fish/${this.id}`]) }
+  }
+  
 

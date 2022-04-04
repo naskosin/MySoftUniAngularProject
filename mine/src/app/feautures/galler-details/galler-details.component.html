@@ -15,3 +15,19 @@
 </div></article>
 
 </section>
+<div class="comments" *ngFor="let comment of comments">
+    <div class="comment">
+  <p class="comment__user">User: {{comment.email}}, commented</p>
+    <div class="comment__text"> <p>{{comment.comment}}</p></div></div>
+ 
+ </div>
+ <div class="container">
+ <form class="form__container"  #createPostForm = "ngForm"  (ngSubmit)="formHandler(createPostForm)" >
+     <h2>Comment</h2>
+    
+     <textarea type="text" #themeComment ="ngModel" id="uses" placeholder="This day" name="comment" ngModel></textarea>
+ 
+     <button class="button" >Comment</button>
+     
+     
+ </form></div>

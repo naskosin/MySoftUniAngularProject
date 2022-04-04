@@ -91,3 +91,58 @@ padding: 30px 30px 0 30px ;
       color: white;
 
   }
+  .comments{
+    width: 50%;
+    height: 200px;
+    background-color: lightgray;
+   border-radius: 30px;
+  
+   
+    margin: 20px auto;
+}
+.comment{
+  display: flex;
+  flex-direction: column;
+}
+.comment__user{
+    background-color: gray;
+    text-indent: 20px;
+    padding: 20px;
+    margin: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    color: white
+}
+.comment__text{
+  background-color: lightgray;
+  text-indent: 20px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 30px;
+  background-color: lightskyblue;
+  width: 50%;
+  justify-content: center;
+  margin: 0 auto;
+}
+.form__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.form__container textarea{
+  width: 100%;
+  margin: 30px auto;
+  height: 150px
+}
+.form__container button{
+  margin: 20px;
+  padding: 10px  20px;
+  border-radius: 30px;
+  text-align: left;
+}
