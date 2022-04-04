@@ -43,10 +43,11 @@
 
 
         <label for="weight">Weight of the fish:</label>
-        <input type="text" id="weight" placeholder="10" name="weight" value="" required ngModel>
-        <ng-container *ngIf="themeStory.touched && themeStory.invalid">
-            <p *ngIf="themeStory.errors?.['required']" class="input-error">Species is required!</p>
-            <p *ngIf="themeStory.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
+        <input type="text" id="weight" placeholder="10" name="weight" value="" #themeWeight="ngModel" required ngModel>
+
+        <ng-container  *ngIf="themeWeight.touched && themeWeight.invalid">
+            <p *ngIf="themeWeight.errors?.['required']" class="input-error">Species is required!</p>
+            <p *ngIf="themeWeight.errors?.['minlength']" class="input-error">Must be at least 4 characters long!</p>
         </ng-container>
        
         <button [disabled]="createCatchForm.invalid"class="button">Create</button>
