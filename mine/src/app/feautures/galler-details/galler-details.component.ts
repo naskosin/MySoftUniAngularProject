@@ -34,7 +34,12 @@ comments!: IComment[];
         this.fish = data
       }
     )
-    console.log(this.id)
+    const id = this.activeSnapshot.snapshot.params['fishid'];
+    this.commentService.getComment().subscribe(data => {
+      console.log(Object.values(data))
+      this.comments=Object.values(data).filter(x=>id===x.themeId);
+    
+   } )
   }
   deleteHandler(){
     console.log('Hi')
@@ -52,7 +57,7 @@ comments!: IComment[];
   const email: string = this.userService.currentUser.email;
   const {comment} = createPostForm.value;
 this.commentService.createComment({comment: comment, ownerId: id, email, themeId: this.id},{headers: header}).subscribe(
-  data=>{console.log(data);
+  data=>{console.log(Object.values(data))
   }
 )
 this.router.navigate([`gallery/fish/${this.id}`]) }

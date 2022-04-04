@@ -19,6 +19,12 @@ const routes: Routes =[
 
     },
     {
+        path: 'fish/:fishid',
+        component: GallerDetailsComponent,
+        canActivate: [AuthGuard]
+
+    },
+    {
         path: 'catch/create',
         component: CreateCatchComponent,
         canActivate: [AuthGuard]
