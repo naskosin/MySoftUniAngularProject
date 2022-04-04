@@ -90,3 +90,14 @@ p{
     margin: 90px 0px 0px 350px ;
     text-align: right;
 }
+.notification{
+    position: absolute;
+    top: 150px;
+    right: 40px;
+    color: white;
+    padding: 15px 20px;
+    background-color: red;
+    opacity: 0.8;
+    border: solid 4px red;
+    border-radius: 30px;
+}

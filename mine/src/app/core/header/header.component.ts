@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { IUser } from '../interfaces';
 import { HttpHeaders } from '@angular/common/http';
+import { Subscription } from 'rxjs';
+import { MessageService, MessageType } from '../message.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +11,26 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  message!:string;
+  isError!: boolean;
  
-  constructor(private userService: UserService) {
+  private subscription!: Subscription;
+  constructor(private userService: UserService,private messageBus: MessageService) {
 
    }
 
   ngOnInit(): void {
+    this.subscription = this.messageBus.onNewMessage$.subscribe(newMessage=>{
+      this.message = newMessage?.text || '';
+      this.isError = newMessage?.type === MessageType.Error
+     if (this.message){
+      setTimeout(()=>{
+        this.messageBus.clear()
+      }, 3000)
+     }
+     
+      
+    })
     console.log(this.userService.currentUser)
   }
  get isLogged(): boolean{

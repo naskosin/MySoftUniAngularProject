@@ -24,7 +24,7 @@
                 <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" id="errors">Password is required!</p>
                 <p *ngIf="loginFormGroup.controls['password'].errors?.['minlength']" id="errors">Password is invalid!</p>
             </ng-container>
-            <p *ngIf = "errorMessage"id="errors">{{errorMessage}}</p>
+            <!--<p *ngIf = "errorMessage"id="errors">{{errorMessage}}</p>-->
 
             <button class="button" [disabled]="this.loginFormGroup.invalid">Login</button>
             <div class="card-no-account">
