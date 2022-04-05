@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { IUser } from './interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
-
+import { environment } from 'src/environments/environment';
+const apiUrl = environment.apiUrl;
 export interface CreateDto{
   username?: string
   email:string,
@@ -28,16 +29,16 @@ constructor(private http: HttpClient) { }
 
 
 login(userData: {email: string, password: string}): Observable<IUser>{
-  return this.http.post<IUser>('http://localhost:3030/users/login', userData).pipe(tap(user=>this.currentUser=user))
+  return this.http.post<IUser>(`${apiUrl}/users/login`, userData).pipe(tap(user=>this.currentUser=user))
 }
   register( userData: {  email: string, password: string}): Observable<IUser>{
-    return this.http.post<IUser>('http://localhost:3030/users/register', userData)
+    return this.http.post<IUser>(`${apiUrl}/users/register`, userData)
   }
   singleUser(options:{headers:HttpHeaders}): Observable<IUser>{
-    return this.http.get<IUser>('http://localhost:3030/users/me',options)
+    return this.http.get<IUser>(`${apiUrl}/users/me`,options)
   }
   logOut(options:{headers:HttpHeaders}): Observable<IUser>{
-    return this.http.get<IUser>('http://localhost:3030/users/logout', options)
+    return this.http.get<IUser>(`${apiUrl}/users/logout`, options)
   }
 
   

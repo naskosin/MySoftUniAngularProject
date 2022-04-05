@@ -43,11 +43,13 @@ comments!: IComment[];
   }
   deleteHandler(){
     console.log('Hi')
-    this.id = this.activeSnapshot.snapshot.params['fishid'];
+    const id:string = this.activeSnapshot.snapshot.params['fishid'];
+    console.log(id)
     const token:string = this.userService.currentUser.accessToken;
    let header = new HttpHeaders({'X-Authorization': token})
    confirm("Are you sure to delete?")
-    this.createCatch.deleteCatch(this.id, {headers: header}).subscribe(data=>this.router.navigate(['/gallery']))
+    this.createCatch.deleteCatch(id, {headers: header}).subscribe(data=>{console.log(data)});
+    this.router.navigate(['/gallery']);
   }
   formHandler(createPostForm: NgForm): void{
     this.id = this.activeSnapshot.snapshot.params['fishid'];
@@ -61,6 +63,13 @@ this.commentService.createComment({comment: comment,  email, themeId: this.id},{
   }
 )
 this.router.navigate([`gallery/fish/${this.id}`]) }
+deleteComment(id:string){
+  const token:string = this.userService.currentUser.accessToken;
+   let header = new HttpHeaders({'X-Authorization': token});
+  this.commentService.deleteComment(id, {headers:header})
+}
+
+
   }
   
 

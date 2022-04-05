@@ -34,7 +34,7 @@ editCatch(id: string, userData: {species: string, bait: string, img:string, stor
 }
 deleteCatch(id: string, options:{headers: HttpHeaders}) : Observable<void>{
  
-  return this.http.delete<void>(`${apiUrl}/data/fishes${id}`, options)
+  return this.http.delete<void>(`${apiUrl}/data/fishes/${id}`, options)
 }  
 
 
