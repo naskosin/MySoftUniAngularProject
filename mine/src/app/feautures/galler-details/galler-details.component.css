@@ -96,7 +96,7 @@ padding: 30px 30px 0 30px ;
     height: 200px;
     background-color: lightgray;
    border-radius: 30px;
-  
+ 
    
     margin: 20px auto;
 }
@@ -111,12 +111,26 @@ padding: 30px 30px 0 30px ;
     margin: 0;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    color: white
+   
+}
+.comment__user span{
+  font-size: 20px; 
+  color: white;
 }
 .comment__text{
+ 
   background-color: lightgray;
-  text-indent: 20px;
+  text-indent: 30px;
+  font-size: 20px;
+  font-style: italic;
 }
+.comments button{
+
+ margin-top: 36px;
+ margin-left:622px;
+  padding: 5px 15px;
+}
+
 .container{
   display: flex;
   flex-direction: column;

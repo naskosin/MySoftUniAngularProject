@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/user.service';
 import { CreateCatchService } from 'src/app/core/create-edit-delete-catch.service';
 import { HttpHeaders } from '@angular/common/http';
-import { NgForm } from '@angular/forms';
+import { NgForm , NgModel} from '@angular/forms';
 import { CommentService } from 'src/app/core/comment.service';
 
 @Component({
