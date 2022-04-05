@@ -66,7 +66,8 @@ this.router.navigate([`gallery/fish/${this.id}`]) }
 deleteComment(id:string){
   const token:string = this.userService.currentUser.accessToken;
    let header = new HttpHeaders({'X-Authorization': token});
-  this.commentService.deleteComment(id, {headers:header})
+  this.commentService.deleteComment(id, {headers:header}).subscribe(data=>console.log("Delete"));
+  this.router.navigate([`gallery/${this.id}`])
 }
 
 
