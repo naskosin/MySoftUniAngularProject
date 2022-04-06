@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import { IUser } from './interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
+import { tap, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 const apiUrl = environment.apiUrl;
 export interface CreateDto{
@@ -40,6 +40,10 @@ login(userData: {email: string, password: string}): Observable<IUser>{
   logOut(options:{headers:HttpHeaders}): Observable<IUser>{
     return this.http.get<IUser>(`${apiUrl}/users/logout`, options)
   }
-
+  authentiCate(options:{headers:HttpHeaders}): Observable<IUser>{
+    return this.http.get<IUser>('https://nasko-fish.herokuapp.com/users/me', options).pipe(tap(user=>this.currentUser=user), catchError((err) => {
+      return EMPTY;
+    }))
+  }
   
 }

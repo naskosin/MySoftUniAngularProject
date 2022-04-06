@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
   Logout():void{
  const token:string = this.userService.currentUser.accessToken;
  let header = new HttpHeaders({'X-Authorization': token})
- this.userService.logOut({headers: header}).subscribe(data=>this.userService.currentUser=data);
+ this.userService.logOut({headers: header}).subscribe(data=>{this.userService.currentUser=data; console.log(data)});
  
  
 
