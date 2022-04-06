@@ -7,10 +7,11 @@
             Fish often seek out shade when it’s hot and sunny and become more active during the cool hours of the day, just as you or I might.   
         </p></div></article>
         <section class="section__second">
-  
+            <div *ngIf="fishes">
+              
         <ul *ngIf="fishes"><app-gallery-item *ngFor="let fish of fishes" [fish]="fish"></app-gallery-item></ul>
      
-        <div class="no_fishes" *ngIf="!fishes"><p><span>Ooops!</span> There's no fishes in the dock. Change your bait and try again!</p></div>
+        <div class="no_fishes" *ngIf="!fishes"><p><span>Ooops!</span> There's no fishes in the dock. Change your bait and try again!</p></div></div>
     
     
 

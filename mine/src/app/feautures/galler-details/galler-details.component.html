@@ -15,15 +15,15 @@
 </div></article>
 
 </section>
-<section *ngIf="!!comments">
+<section *ngIf="comments">
 <div class="comments" *ngFor="let comment of comments">
     <div class="comment">
   <p class="comment__user">User: <span>{{comment.email}}</span>, commented</p>
     <div class="comment__text"> <p>{{comment.comment}}</p></div></div>
     <button *ngIf="user._id===comment._ownerId" (click)="deleteComment(comment._id)">Delete</button>
- </div>
+     </div>
 </section>
-<div  *ngIf="!!!comments"><p> No comments yet!</p></div>
+<div  *ngIf="comments.length===0"><p> No comments yet!</p></div>
 
  <div class="container">
 

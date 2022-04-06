@@ -160,3 +160,11 @@ padding: 30px 30px 0 30px ;
   border-radius: 30px;
   text-align: left;
 }
+#input-error{
+  background: rgb(231, 94, 122);
+  color:white;
+  padding: 3px;
+  border: solid 2px crimson;
+  border-radius: 5px;
+ 
+}

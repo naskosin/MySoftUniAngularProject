@@ -3,6 +3,7 @@ import { GalleryService } from '../../core/gallery.service';
 import { IFish } from '../../core/interfaces';
 
 import { UserService } from 'src/app/core/user.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-gallery',
@@ -21,6 +22,11 @@ fishes!: IFish[]
         console.log(this.userService.currentUser)
       }
     )
+    const token:string = this.userService.currentUser.accessToken;
+    let header = new HttpHeaders({'X-Authorization': token});
+      this.userService.singleUser({headers:header}).subscribe(user=>console.log(user))
+
+
   }
 
 }
