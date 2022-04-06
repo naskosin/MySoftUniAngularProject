@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
     return this.userService.currentUser;
   }
   Logout():void{
- const token:string = this.userService.currentUser.accessToken;
+ const token:string = localStorage.getItem('Token');
  let header = new HttpHeaders({'X-Authorization': token})
  this.userService.logOut({headers: header}).subscribe(data=>{this.userService.currentUser=data; console.log(data)});
  

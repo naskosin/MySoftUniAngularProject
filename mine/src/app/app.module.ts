@@ -34,15 +34,15 @@ import { UserService } from './core/user.service';
     AppRoutingModule,
   ],
   providers: [
-   // {provide: APP_INITIALIZER,
-   //   
-   // useFactory: ( userService: UserService) =>{
-   //  const token:string= localStorage.getItem('Token')
-   //  const header = new HttpHeaders({'X-Authorization': token});
-   //  
-   //   return() => userService.authentiCate({headers:header})
-   // },deps: [UserService],
-   // multi: true}
+    {provide: APP_INITIALIZER,
+      
+    useFactory: ( userService: UserService) =>{
+     const token:string= localStorage.getItem('Token')
+     const header = new HttpHeaders({'X-Authorization': token});
+     
+      return() => userService.authentiCate({headers:header})
+    },deps: [UserService],
+    multi: true}
   ],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent]
 })
