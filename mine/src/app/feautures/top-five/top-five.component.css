@@ -31,7 +31,7 @@ section{
     text-indent: 50px;
 }
 .top__span{
-        position: relative;
+        
         font-style: italic;
         font-size: 40px;
         text-align: left;
@@ -44,7 +44,7 @@ section{
     font-style: italic;
     font-size: 40px;
     text-align: left;
-    color: white;
+    color: black;
    
 
 }
@@ -52,9 +52,7 @@ section{
     font-style: bold;
     font-size: 40px;
     text-align: left;
-    color: white;
-    position: relative;
-    bottom: 100px;
-    left: 450px;
-    text-indent: 50px;
+    color: black;
+    margin-right: 70px;
+    text-indent: 250px;
 }

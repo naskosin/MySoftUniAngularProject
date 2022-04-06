@@ -23,7 +23,7 @@
     <button *ngIf="user._id===comment._ownerId" (click)="deleteComment(comment._id)">Delete</button>
      </div>
 </section>
-<div  *ngIf="comments.length===0"><p> No comments yet!</p></div>
+<div class="no__comments" *ngIf="comments.length===0"><p> No comments yet!</p></div>
 
  <div class="container">
 

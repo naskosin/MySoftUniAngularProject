@@ -42,7 +42,7 @@ const routes: Routes =[
     {
         path: 'catch/topFive',
         component: TopFiveComponent,
-        canActivate: [AuthGuard]
+      
 
     }
 ]

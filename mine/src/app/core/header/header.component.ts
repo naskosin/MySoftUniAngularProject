@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
      this.userService.singleUser({headers:header}).subscribe(user=>console.log(user))
       
     })
-    console.log(this.userService.currentUser)
+   
   }
  get isLogged(): boolean{
     return this.userService.isLogged;

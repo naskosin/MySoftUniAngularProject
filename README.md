@@ -14,12 +14,14 @@ Fishing, in particular spinning fishing is sport tha has increasing group of fan
 
 The app includes:
 Public part:
+- Login
+- Register
 - Gallery: here are all the catches by users.
-- Details: everything that you need to know about particular catch: Species, Bait, Story and Weight. Also you can make comment.
-- Create catch: if you re register, you can upload your fish catch, write the story of catch and name the bait that bring this fish.
+- Top 5: Here are the biggest catches, order by kg.
+Registered users part:
 - Top 5: Here are the biggest catches, order by kg.
 - My Catches: section about user profile and gallery of his catches.
-Registered users part:
-
+- Details: everything that you need to know about particular catch: Species, Bait, Story and Weight. Also you can make comment.
+- Create catch: if you re register, you can upload your fish catch, write the story of catch and name the bait that bring this fish.
 
  
