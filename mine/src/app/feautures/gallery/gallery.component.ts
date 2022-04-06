@@ -18,13 +18,10 @@ fishes!: IFish[]
     this.galleryService.gettopFive().subscribe(
       data=>{
         this.fishes = data;
-        console.log(data);
-        console.log(this.userService.currentUser)
+        
       }
     )
-    const token:string = this.userService.currentUser.accessToken;
-    let header = new HttpHeaders({'X-Authorization': token});
-      this.userService.singleUser({headers:header}).subscribe(user=>console.log(user))
+   
 
 
   }

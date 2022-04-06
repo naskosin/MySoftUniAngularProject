@@ -36,7 +36,7 @@ comments!: IComment[];
     )
     const id = this.activeSnapshot.snapshot.params['fishid'];
     this.commentService.getComment().subscribe(data => {
-      console.log(Object.values(data))
+     
       this.comments=Object.values(data).filter(x=>id===x.themeId);
     
    } )
@@ -49,7 +49,9 @@ comments!: IComment[];
    let header = new HttpHeaders({'X-Authorization': token})
    confirm("Are you sure to delete?")
     this.createCatch.deleteCatch(id, {headers: header}).subscribe(data=>{console.log(data)});
-    this.router.navigate(['/gallery']);
+    setTimeout(()=>{
+      this.router.navigate(['/gallery']); },1000)  
+
   }
   formHandler(createPostForm: NgForm): void{
     this.id = this.activeSnapshot.snapshot.params['fishid'];

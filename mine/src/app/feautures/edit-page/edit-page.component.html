@@ -8,7 +8,7 @@
         <p>Add your fish of lifetime!</p>
 
         <label for="title">Species:</label>
-        <input type="text" #themeSpecies ="ngModel" id="title" placeholder="Spring in the garden" name="species" [ngModel]="fish.species" ngModel required minlength="5">
+        <input type="text" #themeSpecies ="ngModel" id="title" placeholder="Spring in the garden" name="species" [ngModel]="fish?.species" ngModel required minlength="5">
 
         <ng-container *ngIf="themeSpecies.touched && themeSpecies.invalid">
             <p *ngIf="themeSpecies.errors?.['required']" id="input-error">Species is required!</p>
@@ -16,7 +16,7 @@
         </ng-container>
 
         <label for="bait">Bait:</label>
-        <input type="text" #themeBait = "ngModel" id="bait" placeholder="Oil paints" name="bait" value="" [ngModel]="fish.bait" required minlength="5">
+        <input type="text" #themeBait = "ngModel" id="bait" placeholder="Oil paints" name="bait" value="" [ngModel]="fish?.bait" required minlength="5">
 
         <ng-container *ngIf="themeBait.touched && themeBait.invalid">
             <p *ngIf="themeBait.errors?.['required']" id="input-error">Bait is required!</p>
@@ -24,7 +24,7 @@
         </ng-container>
 
         <label for="picture">Fish picture:</label>
-        <input type="text" #themeImg = "ngModel" id="picture" placeholder="http://..." name="img" value=""[ngModel]="fish.img" ngModel pattern="(http:|https:)+[^\s]+[\w]" required minlength="10">
+        <input type="text" #themeImg = "ngModel" id="picture" placeholder="http://..." name="img" value=""[ngModel]="fish?.img" ngModel pattern="(http:|https:)+[^\s]+[\w]" required minlength="10">
 
         <ng-container *ngIf="themeImg.touched && themeImg.invalid">
             <p *ngIf="themeImg.errors?.['required']" id="input-error">Img is required!</p>
@@ -34,7 +34,7 @@
 
 
         <label for="story">Story:</label>
-        <textarea type="text" #themeStory="ngModel" id="story" rows="5" name="story" [ngModel]="fish.story" ngModel required minlength="50"></textarea>
+        <textarea type="text" #themeStory="ngModel" id="story" rows="5" name="story" [ngModel]="fish?.story" ngModel required minlength="50"></textarea>
 
         <ng-container *ngIf="themeStory.touched && themeStory.invalid">
             <p *ngIf="themeStory.errors?.['required']" id="input-error">Story is required!</p>
