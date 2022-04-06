@@ -31,7 +31,7 @@ export class EditPageComponent implements OnInit {
   }
   formHandler(createCatchForm: NgForm):void{
   this.id = this.activeSnapshot.snapshot.params['fishid'];
-  const token:string = this.userService.currentUser.accessToken;
+  const token:string = localStorage.getItem('Token');
   let header = new HttpHeaders({'X-Authorization': token})
   
   this.createService.editCatch(this.id,createCatchForm.value, {headers:header}).subscribe((data)=>{

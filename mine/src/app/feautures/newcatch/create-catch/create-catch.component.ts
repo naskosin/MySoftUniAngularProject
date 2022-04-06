@@ -23,7 +23,7 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   formHandler(createCatchForm: NgForm):void{
-   const token:string = this.userService.currentUser.accessToken;
+    const token:string = localStorage.getItem('Token');
    let header = new HttpHeaders({'X-Authorization': token})
     
    this.createService.createCatch(createCatchForm.value, {headers:header}).subscribe((data)=>{

@@ -28,10 +28,7 @@ export class HeaderComponent implements OnInit {
         this.messageBus.clear()
       }, 3000)
      }
-     const token:string = this.userService.currentUser.accessToken;
-   let header = new HttpHeaders({'X-Authorization': token});
-     this.userService.singleUser({headers:header}).subscribe(user=>console.log(user))
-      
+    
     })
    
   }
