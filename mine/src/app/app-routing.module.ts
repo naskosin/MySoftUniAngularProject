@@ -9,6 +9,7 @@ import { GalleryComponent } from './feautures/gallery/gallery.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoggedGuard } from './core/guards/logged.guard';
 import { AboutPageComponent } from './feautures/pages/about-page/about-page.component';
+import { ContactsComponent } from './feautures/pages/contacts/contacts.component';
 
 const routes: Routes = [
 
@@ -36,7 +37,10 @@ const routes: Routes = [
   path: 'about',
   component: AboutPageComponent
 },
-
+{
+  path: 'contacts',
+  component: ContactsComponent
+},
 {  path: '**',
   pathMatch: 'full',
   component: PageNotFoundComponent

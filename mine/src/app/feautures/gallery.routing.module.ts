@@ -6,6 +6,7 @@ import { CreateCatchComponent } from './newcatch/create-catch/create-catch.compo
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { TopFiveComponent } from './top-five/top-five.component';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { OwnerGuard } from '../core/guards/owner.guard';
 const routes: Routes =[
     {
         path: '',
@@ -16,12 +17,7 @@ const routes: Routes =[
         path: ':fishid',
         component: GallerDetailsComponent,
         canActivate: [AuthGuard],
-      // children: [{
-      //  path: ':fishid',
-      //  component: GallerDetailsComponent,
-      // }
-      //  
-      // ]
+    
 
     },
     {
@@ -38,7 +34,7 @@ const routes: Routes =[
     {
         path: 'editpage/:fishid',
         component: EditPageComponent,
-        canActivate: [AuthGuard]
+        canActivate: [OwnerGuard]
     },
     {
         path: 'catch/topFive',
