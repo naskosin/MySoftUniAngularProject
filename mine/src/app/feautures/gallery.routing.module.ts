@@ -37,11 +37,13 @@ const routes: Routes =[
     },
     {
         path: 'editpage/:fishid',
-        component: EditPageComponent
+        component: EditPageComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'catch/topFive',
         component: TopFiveComponent,
+       
       
 
     }

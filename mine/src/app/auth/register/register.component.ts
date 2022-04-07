@@ -40,8 +40,12 @@ export class RegisterComponent implements OnInit{
       email: email,
       password: passwords.password
     };
-    this.userService.register(body).subscribe((data)=>console.log(data))
-    this.router.navigate(['/login'])
+    this.userService.register(body).subscribe((data)=>{
+      localStorage.setItem("Token", data.accessToken)
+  localStorage.setItem("isLogged", 'true')
+    })
+    this.router.navigate(['/home'])
+
   }
 
   ngOnInit(): void {

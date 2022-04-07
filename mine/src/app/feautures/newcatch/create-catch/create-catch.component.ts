@@ -29,6 +29,7 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
    this.createService.createCatch(createCatchForm.value, {headers:header}).subscribe((data)=>{
      
    })
-   this.router.navigate(['/gallery'])
+   setTimeout(()=>{
+    this.router.navigate([`/gallery`]); },1000)
   }
 }

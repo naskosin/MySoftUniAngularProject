@@ -32,7 +32,7 @@ login(userData: {email: string, password: string}): Observable<IUser>{
   return this.http.post<IUser>(`${apiUrl}/users/login`, userData).pipe(tap(user=>this.currentUser=user))
 }
   register( userData: {  email: string, password: string}): Observable<IUser>{
-    return this.http.post<IUser>(`${apiUrl}/users/register`, userData)
+    return this.http.post<IUser>(`${apiUrl}/users/register`, userData).pipe(tap(user=>this.currentUser=user))
   }
   singleUser(options:{headers:HttpHeaders}): Observable<IUser>{
     return this.http.get<IUser>(`${apiUrl}/users/me`,options)

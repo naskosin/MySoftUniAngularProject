@@ -35,10 +35,13 @@ export class EditPageComponent implements OnInit {
   let header = new HttpHeaders({'X-Authorization': token})
   
   this.createService.editCatch(this.id,createCatchForm.value, {headers:header}).subscribe((data)=>{
-    console.log(data, "Hi")
+   
   })
-  console.log(createCatchForm.value)
-  this.router.navigate([`gallery/${this.id}`])
+  setTimeout(()=>{
+    this.router.navigate([`gallery/${this.id}`]); },1000)  
 
 }
+  
+
+
 }
