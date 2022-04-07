@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&family=Playball&display=swap');
+
+
 .details__div> p{
 
     margin: 30px;
@@ -74,8 +77,8 @@ padding: 30px 30px 0 30px ;
   .edit{
    
     background-color: rgb(11, 194, 11); 
-    margin: 10px;
-    padding: 5px;
+    margin: 27px 41px;
+    padding: 5px 15px;
     border-radius: 10px;
 
 }
@@ -85,8 +88,8 @@ padding: 30px 30px 0 30px ;
   }
   .delete{
       background-color: red;
-      margin: 10px;
-      padding: 5px;
+      margin: 35px 30px;
+      padding: 5px 15px;
       border-radius: 10px;
       color: white;
 
@@ -172,4 +175,7 @@ padding: 30px 30px 0 30px ;
   margin-left: 300px;
   font-size: 30px;
 
+}
+p{
+  font-family: Lobster, sans-serif;
 }

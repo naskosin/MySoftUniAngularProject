@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&family=Playball&display=swap');
+
+
+
 main{
     width:100%;
      
@@ -119,3 +123,6 @@ object-fit: fill;
     color: black;
     font-style: italic;
 }
+p{
+    font-family: Lobster, sans-serif;
+  }

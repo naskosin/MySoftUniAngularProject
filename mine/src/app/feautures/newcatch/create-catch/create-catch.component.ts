@@ -30,6 +30,6 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
      
    })
    setTimeout(()=>{
-    this.router.navigate([`/gallery`]); },1000)
+    this.router.navigate([`/gallery`]); },500)
   }
 }

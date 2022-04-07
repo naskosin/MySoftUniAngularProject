@@ -38,7 +38,7 @@ export class EditPageComponent implements OnInit {
    
   })
   setTimeout(()=>{
-    this.router.navigate([`gallery/${this.id}`]); },1000)  
+    this.router.navigate([`gallery/${this.id}`]); },500)  
 
 }
   

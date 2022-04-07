@@ -3,11 +3,11 @@
   </div>
 <section *ngIf="!!fish" class="section__main">
 <article class="main"><div class="main__img__wrapper"><img class="main__img" [src]="fish.img" alt="No picture"></div>
-    <div class= "details__div"><p><span>Fish species:</span> {{fish.species}}</p>
-    <p><span>Bait: </span>{{fish.bait}}</p>
-    <p> <span>The story:</span>{{fish.story}}</p>
+    <div class= "details__div"><p><span>Fish species:  </span> {{fish.species}}</p>
+    <p><span>Bait:  </span>{{fish.bait}}</p>
+    <p> <span>The story:  </span>{{fish.story}}</p>
 
-    <p><span>Weight: </span>{{fish.weight}} kg.</p>
+    <p><span>Weight:  </span>{{fish.weight}} kg.</p>
     <ng-container *ngIf="user._id===fish._ownerId">
         <button class="delete" (click)="deleteHandler()">Delete article</button>
     <button class = "edit"><a  [routerLink]="['/gallery/editpage', fish._id]">Edit article</a></button>
