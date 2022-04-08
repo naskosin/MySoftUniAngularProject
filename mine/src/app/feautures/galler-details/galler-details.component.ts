@@ -71,7 +71,13 @@ deleteComment(id:string){
   this.commentService.deleteComment(id, {headers:header}).subscribe(data=>console.log("Delete"));
   this.router.navigate([`gallery`])
 }
-
+//editComment(id:string) {
+//  if(!!id){
+//return false;
+//  }
+// return true;
+//
+//}
 
   }
   

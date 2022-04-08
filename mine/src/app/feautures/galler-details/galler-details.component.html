@@ -17,11 +17,14 @@
 </section>
 <section *ngIf="comments">
 <div class="comments" *ngFor="let comment of comments">
-    <div class="comment">
+    <div class="comment" *ngIf="!!!comment._id">
   <p class="comment__user">User: <span>{{comment.email}}</span>, commented</p>
     <div class="comment__text"> <p>{{comment.comment}}</p></div></div>
     <button *ngIf="user._id===comment._ownerId" (click)="deleteComment(comment._id)">Delete</button>
+    <button *ngIf="user._id===comment._ownerId" >Edit</button>
+    <div class="editMode" *ngIf="!!comment._id">Heloo</div>
      </div>
+    
 </section>
 <div class="no__comments" *ngIf="comments?.length===0"><p> No comments yet!</p></div>
 

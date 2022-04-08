@@ -12,12 +12,9 @@ fishes!: IFish[];
   constructor(public galleryService: GalleryService) { }
 
   ngOnInit(): void {
-    this.galleryService.getAllCatches$().subscribe(
+    this.galleryService.gettopFive().subscribe(
       data=>{
-        this.fishes = data.sort((a, b)=>{
-          return b.weight-a.weight
-        });
-        console.log(data);
+        this.fishes = data
      
       }
     )

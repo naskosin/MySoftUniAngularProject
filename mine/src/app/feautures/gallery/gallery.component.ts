@@ -15,7 +15,7 @@ fishes!: IFish[]
   constructor(private galleryService: GalleryService, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.galleryService.gettopFive().subscribe(
+    this.galleryService.getAllCatches$().subscribe(
       data=>{
         this.fishes = data;
         

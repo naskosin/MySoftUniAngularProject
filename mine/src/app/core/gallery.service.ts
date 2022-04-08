@@ -22,6 +22,8 @@ export class GalleryService {
       return this.http.get<IFish>(`${apiUrl}/data/fishes/${id}`)
     }
     gettopFive(): Observable<IFish[]>{
-      return this.http.get<IFish[]>(`${apiUrl}/data/fishes?5`).pipe(map(data=>Object.values(data)));
+      return this.http.get<IFish[]>(`${apiUrl}/data/fishes?5`).pipe(map(data=>Object.values(data).sort((a, b)=>{
+        return b.weight-a.weight
+      }).slice(0,5)));
     }
 }
