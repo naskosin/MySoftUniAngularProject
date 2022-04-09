@@ -5,7 +5,7 @@ export interface IComment
     _id: string;
   email:string;
 themeId : string;
-
+isInEdit: boolean;
     
 
 }

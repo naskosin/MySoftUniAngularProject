@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IFish } from './interfaces';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment'
-import { map } from 'rxjs/operators';
+
 const apiUrl = environment.apiUrl;
   
 
