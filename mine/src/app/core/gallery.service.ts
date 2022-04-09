@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {IFish} from './interfaces';
 import {HttpClient} from '@angular/common/http';
 import { environment } from '../../environments/environment'
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 const apiUrl = environment.apiUrl;
 
 @Injectable({

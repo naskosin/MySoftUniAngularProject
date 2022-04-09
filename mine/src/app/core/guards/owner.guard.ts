@@ -10,19 +10,19 @@ import { GalleryService } from '../gallery.service';
 })
 export class OwnerGuard implements CanActivate {
   fish!: IFish;
-  fishes: IFish[]
+ 
   id: string;
   constructor(private userService: UserService, private route: Router, private galleryServ : GalleryService,){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
      
-      this.id = route.paramMap.get('fishid')
-      console.log(this.id)
-      this.galleryServ.getAllCatches$().subscribe(data=>{this.fishes=data})
-      this.galleryServ.getCatchOne(this.id).subscribe(dat=>{this.fish=dat});
+     
+      console.log(this.userService.currentUser._id)
+      console.log(route.paramMap.get('fishid'))
+    this.galleryServ.getCatchOne( route.paramMap.get('fishid')).subscribe(data=>this.fish=data)
       console.log(this.fish)
-      if(this.userService.currentUser._id===this.fish?._ownerId){
+      if(this.userService.currentUser._id==this.fish._ownerId){
         
         return true;}
      

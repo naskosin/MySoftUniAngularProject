@@ -54,7 +54,7 @@ export class GallerDetailsComponent implements OnInit {
     });
     setTimeout(() => {
       this.router.navigate(['/gallery']);
-    }, 500);
+    }, 200);
   }
   formHandler(createPostForm: NgForm): void {
     this.id = this.activeSnapshot.snapshot.params['fishid'];
@@ -74,9 +74,9 @@ export class GallerDetailsComponent implements OnInit {
       setTimeout(() => {
         this.router
           .navigateByUrl('/', { skipLocationChange: true })
-          .then(() => this.router.navigate([`gallery/${this.id}`])),
-          500;
-      });
+          .then(() => this.router.navigate([`gallery/${this.id}`]))
+      },
+      500);
   }
   deleteComment(id: string) {
     const token: string = localStorage.getItem('Token');
@@ -87,9 +87,9 @@ export class GallerDetailsComponent implements OnInit {
     setTimeout(() => {
       this.router
         .navigateByUrl('/', { skipLocationChange: true })
-        .then(() => this.router.navigate([`gallery/${this.id}`])),
-        10000;
-    });
+        .then(() => this.router.navigate([`gallery/${this.id}`]))
+        
+    },500);
   }
   editCommentHandler(commen: string, editPostForm: NgForm) {
     const token: string = localStorage.getItem('Token');
@@ -108,7 +108,7 @@ export class GallerDetailsComponent implements OnInit {
       this.router
         .navigateByUrl('/', { skipLocationChange: true })
         .then(() => this.router.navigate([`gallery/${this.id}`])),
-        50000;
+        500;
     });
   }
 }

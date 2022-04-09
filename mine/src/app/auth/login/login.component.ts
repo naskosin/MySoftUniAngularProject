@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, ɵConsole, } from '@angular/core';
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/user.service';
@@ -40,7 +40,7 @@ const body ={
 };
 this.userService.login(body).subscribe({
   next: (data)=>{
-    
+    console.log(this.userService.currentUser)
   localStorage.setItem("Token", data.accessToken)
   localStorage.setItem("isLogged", 'true')
 this.router.navigate(['/home'])
