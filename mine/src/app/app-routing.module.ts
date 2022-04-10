@@ -10,6 +10,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { LoggedGuard } from './core/guards/logged.guard';
 import { AboutPageComponent } from './feautures/pages/about-page/about-page.component';
 import { ContactsComponent } from './feautures/pages/contacts/contacts.component';
+import { SearchComponent } from './feautures/pages/search/search.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,10 @@ const routes: Routes = [
   path: 'gallery',
   loadChildren: () => import('./feautures/feautures.module').then(m => m.FeauturesModule)
 
+},
+{
+  path: 'search',
+  component: SearchComponent
 },
 {
   path: 'about',
