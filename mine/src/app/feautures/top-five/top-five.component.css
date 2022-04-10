@@ -57,5 +57,16 @@ section{
     text-indent: 250px;
 }
 .no_fishes{
-    margin-top: 170px;
+    margin: 250px 0 300px 100px;
+   
+}
+.no_fishes{
+    font-size: 30px;
+    color: rgb(226, 43, 43);
+  
+}
+.no_fishes span{
+    font-size: 50px;
+    color: black;
+    font-style: italic;
 }

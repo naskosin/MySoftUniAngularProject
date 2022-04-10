@@ -1,4 +1,7 @@
-<section class="section__main">
+<div *ngIf="!fishes">
+    Loading...
+  </div>
+<section *ngIf="fishes" class="section__main">
     <article class="main"><div class="main__img__wrapper"><img class="main__img" src="assets/5ce826aedf29c86610716597.jpg" alt="No picture"></div>
         <div class= "main__div"><h1>Fishing is passion!</h1>
         <p>
@@ -9,9 +12,9 @@
         <section class="section__second">
             <div *ngIf="fishes">
               
-        <ul *ngIf="fishes"><app-gallery-item *ngFor="let fish of fishes" [fish]="fish"></app-gallery-item></ul></div>
+        <ul ><app-gallery-item *ngFor="let fish of fishes" [fish]="fish"></app-gallery-item></ul></div>
      
-        <div class="no_fishes" *ngIf="!fishes"><p><span>Ooops!</span> There's no fishes in the dock. Change your bait and try again!</p></div>
+        <div class="no_fishes" *ngIf="fishes.length==0"><p><span>Ooops!</span> There's no fishes in the dock. Change your bait and try again!</p></div>
     
     
 
