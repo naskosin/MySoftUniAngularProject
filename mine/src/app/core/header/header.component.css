@@ -37,6 +37,8 @@
 }
 .header ul{
     margin-top: 20px;
+    margin-right: 40px;
+    padding:0 10px;
 }
 .header nav{
     display: inline-block;
