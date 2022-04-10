@@ -3,6 +3,7 @@ Tech part:
 - Angular CLI: 13.2.5;
 - Heroku;
 - GitHub
+- GitHub Pages
 - GitHub Desktop;
 - Typescript: 4.5.3;
 
@@ -23,5 +24,11 @@ Registered users part:
 - My Catches: section about user profile and gallery of his catches.
 - Details: everything that you need to know about particular catch: Species, Bait, Story and Weight. Also you can make comment.
 - Create catch: if you re register, you can upload your fish catch, write the story of catch and name the bait that bring this fish.
+
+
+
+Deploy GitHub Pages:
+You can find it  at:
+https://naskosin.github.io
 
  
