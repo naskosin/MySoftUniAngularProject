@@ -18,14 +18,14 @@ export class OwnerGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
      
      
-      console.log(this.userService.currentUser._id)
-      const fishId = route.paramMap.get('fishid')
-      console.log(fishId)
+      console.log(this.userService.currentUser._id);
+      const fishId = route.paramMap.get('fishid');
+      console.log(fishId);
     this.galleryServ.getCatchOne(fishId ).subscribe(data=>{
      console.log(data);
          this.fish=data;
-      })
-   
+      });
+   console.log(this.fish._ownerId);
       if(this.userService.currentUser._id==this.fish._ownerId){
         
         return true;}
