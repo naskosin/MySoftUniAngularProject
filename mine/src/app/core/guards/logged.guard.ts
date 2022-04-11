@@ -13,10 +13,10 @@ export class LoggedGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(!!this.userService.currentUser){
         console.log(this.userService.currentUser);
-        
+        alert("You're already logged!")
         return this.route.createUrlTree(['/home'])
         }
-        console.log(!!this.userService.currentUser)
+       
         
         return true;
   
