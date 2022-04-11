@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-catch.component.css']
 })
 export class CreateCatchComponent implements OnInit, AfterViewInit {
-  @ViewChild('myForm') myForm!: NgForm;
+
 
   constructor(private userService: UserService, private createService: CreateCatchService, private router: Router ) { }
   ngAfterViewInit(): void {
@@ -29,6 +29,7 @@ export class CreateCatchComponent implements OnInit, AfterViewInit {
    this.createService.createCatch(createCatchForm.value, {headers:header}).subscribe((data)=>{
      
    })
+  createCatchForm.reset();
    setTimeout(()=>{
     this.router.navigate([`/gallery`]); },500)
   }

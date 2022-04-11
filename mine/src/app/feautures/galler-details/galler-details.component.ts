@@ -56,13 +56,13 @@ export class GallerDetailsComponent implements OnInit {
       this.router.navigate(['/gallery']);
     }, 200);
   }
-  formHandler(createPostForm: NgForm): void {
+  commentHandler(createCommentForm: NgForm): void {
     this.id = this.activeSnapshot.snapshot.params['fishid'];
     const token: string = localStorage.getItem('Token');
     let header = new HttpHeaders({ 'X-Authorization': token });
     const id: string = this.userService.currentUser._id;
     const email: string = this.userService.currentUser.email;
-    const { comment } = createPostForm.value;
+    const { comment } = createCommentForm.value;
     this.commentService
       .createComment(
         { comment: comment, email, themeId: this.id },
@@ -71,6 +71,7 @@ export class GallerDetailsComponent implements OnInit {
       .subscribe((data) => {
         console.log(Object.values(data));
       });
+      createCommentForm.reset();
       setTimeout(() => {
         this.router
           .navigateByUrl('/', { skipLocationChange: true })
