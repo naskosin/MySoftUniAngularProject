@@ -24,7 +24,7 @@ export class OwnerGuard implements CanActivate {
       console.log(fishId);
     this.galleryServ.getCatchOne(fishId).subscribe(data=>{
   
-     this.ownerId=data._ownerId; //this.isTrue=this.ownerId==this.id ? false : true;
+     this.ownerId=data._ownerId; 
      
  });
      
