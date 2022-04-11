@@ -34,7 +34,7 @@ const routes: Routes =[
     {
         path: 'editpage/:fishid',
         component: EditPageComponent,
-        //canActivate: [OwnerGuard]
+        canActivate: [OwnerGuard]
     },
     {
         path: 'catch/topFive',
