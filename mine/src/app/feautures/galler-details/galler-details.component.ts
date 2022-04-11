@@ -107,8 +107,8 @@ export class GallerDetailsComponent implements OnInit {
     setTimeout(() => {
       this.router
         .navigateByUrl('/', { skipLocationChange: true })
-        .then(() => this.router.navigate([`gallery/${this.id}`])),
-        500;
-    });
+        .then(() => this.router.navigate([`gallery/${this.id}`]));
+        
+    }, 500);
   }
 }
