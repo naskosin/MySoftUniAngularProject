@@ -9,8 +9,8 @@ import { GalleryService } from '../gallery.service';
   providedIn: 'root'
 })
 export class OwnerGuard implements CanActivate {
-  fish!: IFish;
- 
+  ownerId!: string;
+ isTrue: boolean;
   id: string;
   constructor(private userService: UserService, private route: Router, private galleryServ : GalleryService,){}
   canActivate(
@@ -18,21 +18,27 @@ export class OwnerGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
      
      
-      console.log(this.userService.currentUser._id);
+      this.id = this.userService.currentUser._id;
+      console.log(this.id);
       const fishId = route.paramMap.get('fishid');
       console.log(fishId);
-    this.galleryServ.getCatchOne(fishId ).subscribe(data=>{
-     console.log(data);
-         this.fish=data;
-      });
-   console.log(this.fish._ownerId);
-      if(this.userService.currentUser._id==this.fish._ownerId){
-        
-        return true;}
+    this.galleryServ.getCatchOne(fishId).subscribe(data=>{
+  
+     this.ownerId=data._ownerId; //this.isTrue=this.ownerId==this.id ? false : true;
      
-        return this.route.createUrlTree(['/gallery'])
+ });
+     
+  console.log(this.ownerId);
+
+ console.log(this.isTrue);
+  if(this.id==this.ownerId){
+        
+    return true;} ;
     
+     
+        
+    return this.route.createUrlTree(['/gallery'])
       
   }
-  
+ 
 }
