@@ -10,38 +10,36 @@ import { HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-edit-page',
   templateUrl: './edit-page.component.html',
-  styleUrls: ['./edit-page.component.css']
+  styleUrls: ['./edit-page.component.css'],
 })
 export class EditPageComponent implements OnInit {
   id!: string;
   fish!: IFish;
-  constructor(private userService: UserService,private activeSnapshot: ActivatedRoute, private galleryService: GalleryService, private createService: CreateCatchService, private router: Router) { }
-@ViewChild('createCatchForm') createCatchForm!: NgForm
+  constructor(
+    private userService: UserService,
+    private activeSnapshot: ActivatedRoute,
+    private galleryService: GalleryService,
+    private createService: CreateCatchService,
+    private router: Router
+  ) {}
+  @ViewChild('createCatchForm') createCatchForm!: NgForm;
   ngOnInit(): void {
     this.id = this.activeSnapshot.snapshot.params['fishid'];
 
-    this.galleryService.getCatchOne(this.id).subscribe(
-      data=>{
-        this.fish = data;
-       
-      }
-    )
-   
-  
+    this.galleryService.getCatchOne(this.id).subscribe((data) => {
+      this.fish = data;
+    });
   }
-  formHandler(createCatchForm: NgForm):void{
-  this.id = this.activeSnapshot.snapshot.params['fishid'];
-  const token:string = localStorage.getItem('Token');
-  let header = new HttpHeaders({'X-Authorization': token})
-  
-  this.createService.editCatch(this.id,createCatchForm.value, {headers:header}).subscribe((data)=>{
-   
-  })
-  setTimeout(()=>{
-    this.router.navigate([`gallery/${this.id}`]); },500)  
+  formHandler(createCatchForm: NgForm): void {
+    this.id = this.activeSnapshot.snapshot.params['fishid'];
+    const token: string = localStorage.getItem('Token');
+    let header = new HttpHeaders({ 'X-Authorization': token });
 
-}
-  
-
-
+    this.createService
+      .editCatch(this.id, createCatchForm.value, { headers: header })
+      .subscribe((data) => {});
+    setTimeout(() => {
+      this.router.navigate([`gallery/${this.id}`]);
+    }, 500);
+  }
 }
