@@ -19,14 +19,14 @@ export class EditPageComponent implements OnInit {
 @ViewChild('createCatchForm') createCatchForm!: NgForm
   ngOnInit(): void {
     this.id = this.activeSnapshot.snapshot.params['fishid'];
-    console.log(this.id)
+
     this.galleryService.getCatchOne(this.id).subscribe(
       data=>{
         this.fish = data;
-        console.log(this.fish)
+       
       }
     )
-    console.log(this.id)
+   
   
   }
   formHandler(createCatchForm: NgForm):void{

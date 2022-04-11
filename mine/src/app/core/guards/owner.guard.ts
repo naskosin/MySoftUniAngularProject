@@ -21,8 +21,11 @@ export class OwnerGuard implements CanActivate {
       console.log(this.userService.currentUser._id)
       const fishId = route.paramMap.get('fishid')
       console.log(fishId)
-    this.galleryServ.getCatchOne(fishId ).subscribe(data=>this.fish=data)
-      console.log(this.fish)
+    this.galleryServ.getCatchOne(fishId ).subscribe(data=>{
+     console.log(data);
+         this.fish=data;
+      })
+   
       if(this.userService.currentUser._id==this.fish._ownerId){
         
         return true;}
