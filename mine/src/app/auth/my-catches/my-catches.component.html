@@ -8,13 +8,14 @@
 <div class="catches" *ngIf="fishes?.length!==0">
 <p>My catches gallery:</p>
 <ul >
-    <li *ngFor="let fish of fishes"><article>
+    <li *ngFor="let fish of fishes">
+        <article class= "my__catches">
         <div class="article__img__wrapper">
         <img class="article__img"  [src]="fish.img" alt="">
        
             
     </div>
-       
+       <p class= "my__catches__description"><span class= "my__catches__description__span">Catched on:</span> {{fish._createdOn | date:'M/d/yy, h:mm a'}}</p>
     </article></li>  
 </ul>
 </div> 

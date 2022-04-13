@@ -73,3 +73,10 @@ border-radius: 50px;
    font-size: 40px;
    margin: 30px auto;
 }
+.my__catches__description{
+   font-size: 16px;
+}
+.my__catches__description__span{
+   font-style: italic;
+   color: white;
+}

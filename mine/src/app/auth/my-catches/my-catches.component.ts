@@ -20,9 +20,10 @@ export class MyCatchesComponent implements OnInit {
     this.user = this.userService.currentUser;
     const id = this.user._id;
     this.galleryService.getAllCatches$().subscribe((data) => {
-      this.fishes = data.filter((x) => x._ownerId === id);
-      console.log(this.fishes.length);
-      console.log(this.userService.currentUser);
+      this.fishes = data.filter((x) => x._ownerId === id).sort((a,b)=>{
+        return b._createdOn-a._createdOn;
+      });
+     
     });
   }
 }
