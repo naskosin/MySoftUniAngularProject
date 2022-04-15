@@ -85,6 +85,7 @@
             margin: 3px 0 7px;
             font-size: 0.8rem;
             color: #656880;
+            border-left: solid 0.3em green;
         }
         
         .containertext button
@@ -118,4 +119,10 @@
             border: solid 2px crimson;
             border-radius: 5px;
             margin-left: 30px;
+        }
+        .containertext>input.input__error{
+            border-left: solid 0.3em red;
+        }
+        .passwords>input.input__error{
+            border-left: solid 0.3em red;
         }

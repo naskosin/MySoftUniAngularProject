@@ -80,6 +80,7 @@ label {
     margin: 3px auto 7px auto;
     font-size: 0.8rem;
     color: #656880;
+    border-left: solid 0.3em green;
 }
 
 .containertext>.register-btn,
@@ -139,4 +140,7 @@ span {
     border: solid 2px crimson;
     border-radius: 5px;
     
+}
+.containertext>input.input__error{
+    border-left: solid 0.3em red;
 }

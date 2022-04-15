@@ -8,7 +8,7 @@
             <p>Register to upload your catch and view the other fishes.</p>
 
             <label for="email">Email:</label>
-            <input type="text" formControlName= "email" id="username" placeholder="nasko@abv.bg" name="email"/>
+            <input type="text" formControlName= "email" id="username" placeholder="nasko@abv.bg" name="email" [class.input__error]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid"/>
             <ng-container *ngIf = "registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
                 <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" id="errors">Email is required!</p>
                 <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" id="errors">Email is invalid!</p>
@@ -21,14 +21,14 @@
 <div class="passwords" formGroupName="passwords">
 
             <label for="password">Password:</label>
-            <input type="password" formControlName="password" id="password" placeholder="******" name="password"/>
+            <input type="password" formControlName="password" id="password" placeholder="******" name="password"  [class.input__error]="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid"   />
             <ng-container *ngIf="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid">
                 <p *ngIf="passwordsGroup.controls['password'].errors?.['required']" id="errors">Password is required!</p>
                 <p *ngIf="passwordsGroup.controls['password'].errors?.['minlength']" id="errors">Password is invalid!</p>
             </ng-container>
 
             <label for="re-password">Repeat password:</label>
-            <input formControlName= "rePassword" type="password" id="re-password" placeholder="*****" name="rePassword"/>
+            <input formControlName= "rePassword" type="password" id="re-password" placeholder="*****" name="rePassword"  [class.input__error]="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid"  />
             <ng-container *ngIf="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid">
                 <p id="errors">Passwords does not matched!</p>
                
