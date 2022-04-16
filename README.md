@@ -19,6 +19,8 @@ Public part:
 - Register
 - Gallery: here are all the catches by users.
 - Top 5: Here are the biggest catches, order by kg.
+
+
 Registered users part:
 - Top 5: Here are the biggest catches, order by kg.
 - My Catches: section about user profile and gallery of his catches.
