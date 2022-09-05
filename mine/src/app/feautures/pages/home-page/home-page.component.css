@@ -32,3 +32,12 @@
   object-fit: fill;
   
   }
+
+  @media only screen and (max-width: 600px) {
+   .home{
+      border-radius: 50px;
+  
+      margin: 20px;
+      box-shadow: lightskyblue 0px 54px 55px, lightskyblue 0px -12px 30px, lightskyblue 0px 4px 6px, lightskyblue 0px 12px 13px,lightskyblue 0px -3px 5px;
+  }
+  }

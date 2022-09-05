@@ -21,7 +21,7 @@ span{
   color: black;
   font-weight: bold;
 }
-.section__main{
+.sectionmain{
   margin: 160px auto ;
   width: 80%;
   display: flex;
